@@ -13,7 +13,7 @@ export default function Home() {
                 </svg>
               </button>
               <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-500">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-500">
                   <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                   </svg>
@@ -24,10 +24,10 @@ export default function Home() {
 
             {/* Right side - Buttons */}
             <div className="flex items-center gap-3">
-              <button className="rounded-lg border border-green-500 bg-white px-4 py-2 text-sm font-medium text-green-600 hover:bg-green-50">
+              <button className="rounded-lg border border-rose-500 bg-white px-4 py-2 text-sm font-medium text-rose-600 hover:bg-rose-50">
                 Homepage v2
               </button>
-              <button className="rounded-lg bg-green-500 px-4 py-2 text-sm font-semibold text-white hover:bg-green-600">
+              <button className="rounded-lg bg-rose-500 px-4 py-2 text-sm font-semibold text-white hover:bg-rose-600">
                 Get Started Free
               </button>
             </div>
@@ -40,25 +40,25 @@ export default function Home() {
         <div className="mx-auto max-w-4xl">
           {/* Banner */}
           <div className="mb-8 flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2">
-              <svg className="h-4 w-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+            <div className="inline-flex items-center gap-2 rounded-full bg-rose-100 px-4 py-2">
+              <svg className="h-4 w-4 text-rose-600" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
-              <span className="text-sm font-medium text-green-700">Now Available for Shopify Plus</span>
+              <span className="text-sm font-medium text-rose-700">Now Available for Shopify Plus</span>
             </div>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-center text-5xl font-bold leading-tight tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
             Turn{" "}
-            <span className="relative inline-block text-green-600">
+            <span className="relative inline-block text-rose-600">
               top customers
-              <span className="absolute bottom-0 left-0 right-0 h-1 bg-green-600/30"></span>
+              <span className="absolute bottom-0 left-0 right-0 h-1 bg-rose-600/30"></span>
             </span>
             {" "}into{" "}
-            <span className="relative inline-block text-green-600">
+            <span className="relative inline-block text-rose-600">
               powerful
-              <span className="absolute bottom-0 left-0 right-0 h-1 bg-green-600/30"></span>
+              <span className="absolute bottom-0 left-0 right-0 h-1 bg-rose-600/30"></span>
             </span>
             {" "}ambassadors
           </h1>
@@ -70,8 +70,8 @@ export default function Home() {
 
           {/* CTA Buttons */}
           <div className="mt-10 flex items-center justify-center gap-4">
-            <button className="flex items-center gap-2 rounded-lg bg-green-500 px-6 py-3 text-base font-semibold text-white hover:bg-green-600">
-              Start Free Trial
+            <button className="flex items-center gap-2 rounded-lg bg-rose-500 px-6 py-3 text-base font-semibold text-white hover:bg-rose-600">
+              Get Started for Free
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -84,7 +84,7 @@ export default function Home() {
           {/* Feature Points */}
           <div className="mt-8 flex items-center justify-center gap-6 text-sm text-gray-600">
             <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-green-500"></div>
+              <div className="h-2 w-2 rounded-full bg-rose-500"></div>
               <span>14-day free trial</span>
             </div>
             <div className="flex items-center gap-2">
@@ -143,7 +143,7 @@ export default function Home() {
           <div className="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {/* Card 1: Increase Customer Lifetime Value */}
             <div className="rounded-lg bg-white p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-green-500">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-rose-500">
                 <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
@@ -156,7 +156,7 @@ export default function Home() {
 
             {/* Card 2: Boost Acquisition */}
             <div className="rounded-lg bg-white p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-green-500">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-rose-500">
                 <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
@@ -169,7 +169,7 @@ export default function Home() {
 
             {/* Card 3: Build Brand Loyalty */}
             <div className="rounded-lg bg-white p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-green-500">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-rose-500">
                 <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
@@ -182,7 +182,7 @@ export default function Home() {
 
             {/* Card 4: Reduce CAC */}
             <div className="rounded-lg bg-white p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100">
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-green-500">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-rose-500">
                 <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -243,12 +243,12 @@ export default function Home() {
             </div>
 
             {/* Step 03: Enable Sharing */}
-            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-green-100 to-green-50 p-6">
-              <div className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-green-500 text-sm font-bold text-white">
+            <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-rose-100 to-rose-50 p-6">
+              <div className="absolute top-4 right-4 flex h-8 w-8 items-center justify-center rounded-full bg-rose-500 text-sm font-bold text-white">
                 03
               </div>
-              <div className="mt-8 flex h-16 w-16 items-center justify-center rounded-full bg-white border-2 border-green-500">
-                <svg className="h-8 w-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="mt-8 flex h-16 w-16 items-center justify-center rounded-full bg-white border-2 border-rose-500">
+                <svg className="h-8 w-8 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.885 12.938 9 12.482 9 12c0-.482-.115-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
                 </svg>
               </div>
@@ -277,7 +277,7 @@ export default function Home() {
 
           {/* CTA Button */}
           <div className="mt-12 flex justify-center">
-            <button className="flex items-center gap-2 rounded-lg bg-green-500 px-8 py-4 text-base font-semibold text-white hover:bg-green-600">
+            <button className="flex items-center gap-2 rounded-lg bg-rose-500 px-8 py-4 text-base font-semibold text-white hover:bg-rose-600">
               Start Your Journey
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
@@ -316,7 +316,7 @@ export default function Home() {
               <div className="mt-6">
                 <div className="font-semibold text-gray-900">Sarah Chen</div>
                 <div className="text-sm text-gray-600">Growth Marketing Manager</div>
-                <div className="mt-1 text-sm font-medium text-green-600">Premium Athleisure Brand</div>
+                <div className="mt-1 text-sm font-medium text-rose-600">Premium Athleisure Brand</div>
               </div>
             </div>
 
@@ -335,7 +335,7 @@ export default function Home() {
               <div className="mt-6">
                 <div className="font-semibold text-gray-900">Michael Rodriguez</div>
                 <div className="text-sm text-gray-600">E-commerce Director</div>
-                <div className="mt-1 text-sm font-medium text-green-600">Sustainable Fashion Brand</div>
+                <div className="mt-1 text-sm font-medium text-rose-600">Sustainable Fashion Brand</div>
               </div>
             </div>
 
@@ -354,7 +354,7 @@ export default function Home() {
               <div className="mt-6">
                 <div className="font-semibold text-gray-900">Emily Thompson</div>
                 <div className="text-sm text-gray-600">Brand Manager</div>
-                <div className="mt-1 text-sm font-medium text-green-600">Beauty & Wellness</div>
+                <div className="mt-1 text-sm font-medium text-rose-600">Beauty & Wellness</div>
               </div>
             </div>
           </div>
@@ -378,7 +378,7 @@ export default function Home() {
             {/* FAQ 1 */}
             <div className="rounded-lg bg-white p-6 shadow-sm border border-gray-100">
               <div className="flex gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-500">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-500">
                   <span className="text-lg font-bold text-white">Q</span>
                 </div>
                 <div className="flex-1">
@@ -395,7 +395,7 @@ export default function Home() {
             {/* FAQ 2 */}
             <div className="rounded-lg bg-white p-6 shadow-sm border border-gray-100">
               <div className="flex gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-500">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-500">
                   <span className="text-lg font-bold text-white">Q</span>
                 </div>
                 <div className="flex-1">
@@ -412,7 +412,7 @@ export default function Home() {
             {/* FAQ 3 */}
             <div className="rounded-lg bg-white p-6 shadow-sm border border-gray-100">
               <div className="flex gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-500">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-500">
                   <span className="text-lg font-bold text-white">Q</span>
                 </div>
                 <div className="flex-1">
@@ -429,7 +429,7 @@ export default function Home() {
             {/* FAQ 4 */}
             <div className="rounded-lg bg-white p-6 shadow-sm border border-gray-100">
               <div className="flex gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green-500">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-500">
                   <span className="text-lg font-bold text-white">Q</span>
                 </div>
                 <div className="flex-1">
@@ -447,17 +447,17 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="bg-green-500 px-4 py-24 sm:px-6 lg:px-8">
+      <section className="bg-rose-500 px-4 py-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-white sm:text-4xl">
             Ready to Transform Your Customer Relationships?
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-green-50">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-rose-50">
             Join thousands of Shopify merchants who are already seeing incredible results with strategic gifting.
           </p>
           <div className="mt-10 flex items-center justify-center gap-4">
-            <button className="flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-base font-semibold text-green-600 hover:bg-green-50">
-              Start Your Free Trial
+            <button className="flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-base font-semibold text-rose-600 hover:bg-rose-50">
+              Get Started for Free
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -466,7 +466,7 @@ export default function Home() {
               Schedule Demo
             </button>
           </div>
-          <div className="mt-8 flex items-center justify-center gap-6 text-sm text-green-50">
+          <div className="mt-8 flex items-center justify-center gap-6 text-sm text-rose-50">
             <div className="flex items-center gap-2">
               <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -496,7 +496,7 @@ export default function Home() {
             {/* Column 1: Giftshop */}
             <div className="lg:col-span-1">
               <div className="flex items-center gap-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-500">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-rose-500">
                   <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                   </svg>
