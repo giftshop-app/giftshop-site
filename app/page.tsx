@@ -88,10 +88,6 @@ export default function Home() {
               <span>14-day free trial</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-              <span>No credit card required</span>
-            </div>
-            <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-purple-500"></div>
               <span>Setup in 2 minutes</span>
             </div>
