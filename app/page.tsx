@@ -51,47 +51,47 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 py-16 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Vibrant Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-rose-500 via-pink-500 to-orange-400 opacity-90"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 via-purple-500/30 to-transparent"></div>
+      <section className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Subtle Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-rose-50 via-pink-50 to-orange-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent"></div>
         
-        {/* Animated Background Elements */}
+        {/* Subtle Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-rose-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-1/2 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000"></div>
+          <div className="absolute top-20 left-10 w-96 h-96 bg-rose-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+          <div className="absolute top-40 right-10 w-96 h-96 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
         </div>
 
         {/* Content */}
         <div className="relative z-10 mx-auto max-w-4xl">
           {/* Banner */}
           <div className="mb-8 flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-4 py-2 border border-white/30">
-              <svg className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+            <div className="inline-flex items-center gap-2 rounded-full bg-rose-100 px-4 py-2 border border-rose-200">
+              <svg className="h-4 w-4 text-rose-600" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
-              <span className="text-sm font-medium text-white">Now Available for Shopify Plus</span>
+              <span className="text-sm font-medium text-rose-700">Now Available for Shopify Plus</span>
             </div>
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-center text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl drop-shadow-lg">
+          <h1 className="text-center text-5xl font-bold leading-tight tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
             Turn{" "}
-            <span className="relative inline-block text-white">
+            <span className="relative inline-block text-rose-600">
               top customers
-              <span className="absolute bottom-0 left-0 right-0 h-2 bg-white/50 rounded-full"></span>
+              <span className="absolute bottom-0 left-0 right-0 h-2 bg-rose-600/30 rounded-full"></span>
             </span>
             {" "}into{" "}
-            <span className="relative inline-block text-white">
+            <span className="relative inline-block text-rose-600">
               powerful
-              <span className="absolute bottom-0 left-0 right-0 h-2 bg-white/50 rounded-full"></span>
+              <span className="absolute bottom-0 left-0 right-0 h-2 bg-rose-600/30 rounded-full"></span>
             </span>
             {" "}ambassadors
           </h1>
 
           {/* Subheadline */}
-          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-white/90 sm:text-xl drop-shadow-md">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600 sm:text-xl">
             Giftshop helps leading Shopify merchants drive growth and build loyalty through personalized gifting and referral campaigns.
           </p>
 
@@ -109,25 +109,15 @@ export default function Home() {
           </div>
 
           {/* Feature Points */}
-          <div className="mt-8 flex items-center justify-center gap-6 text-sm text-white/90">
+          <div className="mt-8 flex items-center justify-center gap-6 text-sm text-gray-600">
             <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-white"></div>
+              <div className="h-2 w-2 rounded-full bg-rose-500"></div>
               <span>14-day free trial</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-white"></div>
+              <div className="h-2 w-2 rounded-full bg-purple-500"></div>
               <span>Setup in 2 minutes</span>
             </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-          <div className="flex flex-col items-center gap-2 text-white/80">
-            <span className="text-sm font-medium">Scroll to explore</span>
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
           </div>
         </div>
       </section>
