@@ -134,15 +134,11 @@ export default function Home() {
       </section>
 
       {/* Trusted Brands Section */}
-      <section className="relative px-4 py-16 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-transparent"></div>
-        
+      <section className="relative px-4 py-16 sm:px-6 lg:px-8 overflow-hidden bg-white">
         {/* Subtle Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 right-20 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-          <div className="absolute bottom-10 left-20 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+          <div className="absolute top-10 right-20 w-96 h-96 bg-rose-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+          <div className="absolute bottom-10 left-20 w-96 h-96 bg-orange-50 rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl">
