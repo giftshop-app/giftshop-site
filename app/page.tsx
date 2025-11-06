@@ -52,15 +52,15 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative py-20 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Subtle Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-rose-50 via-pink-50 to-orange-50"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent"></div>
+        {/* Balanced Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-rose-100 via-pink-100 to-orange-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"></div>
         
-        {/* Subtle Animated Background Elements */}
+        {/* Balanced Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-10 w-96 h-96 bg-rose-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-96 h-96 bg-pink-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+          <div className="absolute top-20 left-10 w-96 h-96 bg-rose-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+          <div className="absolute top-40 right-10 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-1/2 w-96 h-96 bg-orange-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
         </div>
 
         {/* Content */}
@@ -118,6 +118,16 @@ export default function Home() {
               <div className="h-2 w-2 rounded-full bg-purple-500"></div>
               <span>Setup in 2 minutes</span>
             </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+          <div className="flex flex-col items-center gap-2 text-gray-600">
+            <span className="text-sm font-medium">Scroll to explore</span>
+            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
           </div>
         </div>
       </section>
