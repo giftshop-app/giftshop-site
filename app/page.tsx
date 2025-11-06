@@ -113,13 +113,22 @@ export default function Home() {
 
           {/* Brand Logos Grid */}
           <div className="grid grid-cols-3 gap-4 sm:grid-cols-4 lg:grid-cols-8">
-            {Array.from({ length: 8 }).map((_, i) => (
+            {[
+              "Allbirds",
+              "Glossier",
+              "Warby Parker",
+              "Outdoor Voices",
+              "Everlane",
+              "Brooklinen",
+              "Casper",
+              "Away"
+            ].map((brand, i) => (
               <div
                 key={i}
                 className="flex h-24 items-center justify-center rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="h-12 w-12 rounded bg-gray-200 flex items-center justify-center">
-                  <span className="text-xs font-medium text-gray-400">Brand {i + 1}</span>
+                <div className="px-4 text-center">
+                  <span className="text-sm font-semibold text-gray-700">{brand}</span>
                 </div>
               </div>
             ))}
