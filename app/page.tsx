@@ -165,7 +165,7 @@ export default function Home() {
               customers
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-gray-600">
-              Purpose-built for e-commerce growth, Giftshop integrates seamlessly with your Shopify store to deliver measurable results.
+              Giftshop&apos;s AI integrates quickly and seamlessly with your Shopify store to re-engage and grow your customers affordably.
             </p>
           </div>
 
