@@ -1,4 +1,19 @@
+"use client";
+
+import { useState, useEffect } from "react";
+
 export default function Home() {
+  const words = ["grow", "scale", "retain", "delight", "engage", "convert"];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [words.length]);
+
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-b from-white to-blue-50/30">
       {/* Header */}
@@ -25,7 +40,7 @@ export default function Home() {
             {/* Right side - Buttons */}
             <div className="flex items-center gap-3">
               <button className="rounded-lg border border-rose-500 bg-white px-4 py-2 text-sm font-medium text-rose-600 hover:bg-rose-50">
-                Homepage v2
+                Get a Demo
               </button>
               <button className="rounded-lg bg-rose-500 px-4 py-2 text-sm font-semibold text-white hover:bg-rose-600">
                 Get Started Free
@@ -136,12 +151,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Designed for Shopify Success Section */}
+      {/* Built to help you grow customers Section */}
       <section className="bg-white px-4 py-24 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-              Designed for Shopify Success
+              Built to help you{" "}
+              <span className="relative inline-block text-rose-600">
+                <span className="underline decoration-rose-600 decoration-2 underline-offset-4">
+                  {words[currentWordIndex]}
+                </span>
+              </span>{" "}
+              customers
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-gray-600">
               Purpose-built for e-commerce growth, Giftshop integrates seamlessly with your Shopify store to deliver measurable results.
