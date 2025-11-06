@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const words = ["grow", "scale", "retain", "delight", "engage", "convert"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -13,6 +14,15 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [words.length]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-b from-white to-blue-50/30">
@@ -121,15 +131,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
-          <div className="flex flex-col items-center gap-2 text-gray-600">
-            <span className="text-sm font-medium">Scroll to explore</span>
-            <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
-        </div>
       </section>
 
       {/* Trusted Brands Section */}
@@ -605,6 +606,22 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* Scroll Indicator - Fixed at bottom of viewport */}
+      <div
+        className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40 transition-opacity duration-300"
+        style={{
+          opacity: Math.max(0, 1 - scrollY / 200),
+          pointerEvents: scrollY > 200 ? "none" : "auto",
+        }}
+      >
+        <div className="flex flex-col items-center gap-2 text-gray-600 animate-bounce">
+          <span className="text-sm font-medium">Scroll to explore</span>
+          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
+      </div>
 
       {/* Help Button (Bottom Right) */}
       <button className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white shadow-lg hover:bg-gray-800">
