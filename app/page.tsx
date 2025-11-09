@@ -231,7 +231,7 @@ export default function Home() {
       </section>
 
       {/* Trusted Brands Section - Animated Marquee */}
-      <section ref={brandsSectionRef} className="relative pt-20 pb-32 px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-white via-gray-50/30 to-white">
+      <section ref={brandsSectionRef} className="relative pt-20 pb-20 px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-white via-gray-50/30 to-white">
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 right-32 w-96 h-96 bg-rose-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
@@ -240,7 +240,7 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto max-w-7xl">
           {/* Section Headline - Animated */}
-          <div className={`mb-16 text-center transition-all duration-1000 ${isBrandsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`mb-12 text-center transition-all duration-1000 ${isBrandsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className="inline-flex items-center gap-4 mb-6">
               <div className="h-px w-16 bg-gradient-to-r from-transparent via-rose-400 to-rose-300"></div>
               <span className="text-sm font-bold uppercase tracking-[0.3em] text-rose-600">Trusted by Leading Brands</span>
@@ -317,9 +317,9 @@ export default function Home() {
       </section>
 
       {/* Built to help you grow customers Section - Asymmetric Design */}
-      <section className="bg-white py-28 px-6 lg:px-8">
+      <section className="bg-white pt-20 pb-24 px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl mx-auto text-center mb-20">
+          <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-5xl font-extrabold text-gray-900 sm:text-6xl leading-tight">
               Built to help you{" "}
               <span className="relative inline-block text-rose-600">
@@ -392,14 +392,14 @@ export default function Home() {
       </section>
 
       {/* How Giftshop Works Section - More Dynamic */}
-      <section className="relative bg-gradient-to-b from-gray-50 to-white py-28 px-6 lg:px-8 overflow-hidden">
+      <section className="relative bg-gradient-to-b from-gray-50 to-white pt-20 pb-24 px-6 lg:px-8 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.05)_25%,rgba(0,0,0,0.05)_50%,transparent_50%,transparent_75%,rgba(0,0,0,0.05)_75%,rgba(0,0,0,0.05))] bg-[length:20px_20px]"></div>
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="max-w-3xl mx-auto text-center mb-20">
+          <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-5xl font-extrabold text-gray-900 sm:text-6xl leading-tight">
               How Giftshop Works
             </h2>
@@ -488,9 +488,9 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section - More Unique Layout */}
-      <section className="bg-white py-28 px-6 lg:px-8">
+      <section className="bg-white pt-20 pb-24 px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl mx-auto text-center mb-20">
+          <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-5xl font-extrabold text-gray-900 sm:text-6xl leading-tight">
               Loved by Merchants Worldwide
             </h2>
@@ -562,9 +562,9 @@ export default function Home() {
       </section>
 
       {/* FAQ Section - More Unique Design */}
-      <section className="bg-gray-50 py-28 px-6 lg:px-8">
+      <section className="bg-gray-50 pt-20 pb-24 px-6 lg:px-8">
         <div className="mx-auto max-w-4xl">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <h2 className="text-5xl font-extrabold text-gray-900 sm:text-6xl leading-tight">
               Frequently Asked Questions
             </h2>
