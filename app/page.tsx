@@ -54,7 +54,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section - Stripe-inspired with mockups */}
-      <section className="relative py-32 sm:py-40 px-6 lg:px-8 overflow-hidden bg-white">
+      <section className="relative pt-16 pb-32 sm:pt-20 sm:pb-40 px-6 lg:px-8 overflow-hidden bg-white">
         {/* Subtle Background Gradient - Stripe style */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-white to-white"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(251,113,133,0.05),transparent_70%)]"></div>
@@ -66,11 +66,11 @@ export default function Home() {
 
         {/* Content - Two Column Layout */}
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left Column - Text Content */}
             <div>
               {/* Banner - Minimal Stripe style */}
-              <div className="mb-8">
+              <div className="mb-6">
                 <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 border border-gray-200/50">
                   <span className="text-xs font-semibold uppercase tracking-wider text-gray-600">Now available for all Shopify stores</span>
                 </div>
@@ -128,9 +128,9 @@ export default function Home() {
             </div>
 
             {/* Right Column - UI Mockups */}
-            <div className="relative hidden lg:block h-[600px]">
+            <div className="relative hidden lg:block h-[700px] min-h-[700px]">
               {/* Mockup 1: Campaign Dashboard (Top) */}
-              <div className="absolute top-0 right-0 w-80 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-2deg] z-20">
+              <div className="absolute top-8 right-0 w-80 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-2deg] z-20">
                 <div className="p-4 border-b border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -169,7 +169,7 @@ export default function Home() {
               </div>
 
               {/* Mockup 2: Gift Selection Interface (Middle) */}
-              <div className="absolute top-32 right-8 w-96 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[1deg] z-10">
+              <div className="absolute top-48 right-8 w-96 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[1deg] z-10">
                 <div className="p-5 border-b border-gray-100">
                   <h3 className="text-base font-bold text-gray-900">Select Gift</h3>
                   <p className="text-xs text-gray-500 mt-1">Choose a product to send</p>
@@ -211,7 +211,7 @@ export default function Home() {
               </div>
 
               {/* Mockup 3: Analytics Chart (Bottom) */}
-              <div className="absolute top-64 right-0 w-72 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-1deg] z-0">
+              <div className="absolute top-96 right-0 w-72 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-1deg] z-0">
                 <div className="p-4 border-b border-gray-100">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold text-gray-900">Campaign Performance</span>
