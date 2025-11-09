@@ -54,7 +54,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section - Stripe-inspired with mockups */}
-      <section className="relative pt-16 pb-16 sm:pt-20 sm:pb-20 px-6 lg:px-8 overflow-hidden bg-white">
+      <section className="relative py-24 sm:py-32 px-6 lg:px-8 overflow-hidden bg-white">
         {/* Subtle Background Gradient - Stripe style */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-white to-white"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(251,113,133,0.05),transparent_70%)]"></div>
@@ -66,7 +66,7 @@ export default function Home() {
 
         {/* Content - Two Column Layout */}
         <div className="relative z-10 mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div>
               {/* Banner - Minimal Stripe style */}
@@ -123,9 +123,9 @@ export default function Home() {
             </div>
 
             {/* Right Column - UI Mockups */}
-            <div className="relative hidden lg:block h-[550px] min-h-[550px]">
+            <div className="relative hidden lg:block h-[550px] min-h-[550px] flex items-center">
               {/* Mockup 1: Gift Selection Interface (Top) */}
-              <div className="absolute top-0 right-12 w-[420px] rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[1deg] z-20">
+              <div className="absolute top-8 right-12 w-[420px] rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[1deg] z-20">
                 <div className="p-5 border-b border-gray-100">
                   <h3 className="text-base font-bold text-gray-900">Select Gift</h3>
                   <p className="text-xs text-gray-500 mt-1">Choose a product to send</p>
@@ -167,7 +167,7 @@ export default function Home() {
               </div>
 
               {/* Mockup 2: Campaign Dashboard (Bottom - Nested) */}
-              <div className="absolute top-[350px] right-0 w-96 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-2deg] z-10">
+              <div className="absolute top-[358px] right-0 w-96 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-2deg] z-10">
                 <div className="p-4 border-b border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
