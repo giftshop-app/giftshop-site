@@ -5,6 +5,8 @@ import { useState, useEffect, useRef } from "react";
 export default function Home() {
   const words = ["grow", "scale", "retain", "delight", "engage", "convert"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const headerWords = ["revenue", "customers", "referrals", "LTV"];
+  const [currentHeaderWordIndex, setCurrentHeaderWordIndex] = useState(0);
   const [isBrandsVisible, setIsBrandsVisible] = useState(false);
   const brandsSectionRef = useRef<HTMLDivElement>(null);
 
@@ -15,6 +17,14 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [words.length]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeaderWordIndex((prevIndex) => (prevIndex + 1) % headerWords.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [headerWords.length]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -100,9 +110,16 @@ export default function Home() {
 
               {/* Main Headline - Stripe typography style */}
               <h1 className="text-5xl font-bold leading-[1.05] tracking-[-0.02em] text-gray-900 sm:text-6xl lg:text-7xl">
-                Gift better.{" "}
-                <span className="text-rose-600">Grow faster.</span>
-              </h1>
+                Gift better. Grow{" "}
+                <span className="relative inline-block text-rose-600 min-w-[200px]">
+                  <span 
+                    key={currentHeaderWordIndex}
+                    className="inline-block animate-word-fade-in"
+                  >
+                    {headerWords[currentHeaderWordIndex]}
+                  </span>
+                </span>
+          </h1>
 
               {/* Subheadline - Stripe style */}
               <p className="mt-6 text-lg leading-relaxed text-gray-600 max-w-xl">
