@@ -327,6 +327,211 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Gift Flow Animation Section - Stripe-inspired */}
+      <section className="relative bg-white pt-20 pb-24 px-6 lg:px-8 overflow-hidden">
+        {/* Subtle Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-white to-white"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(251,113,133,0.03),transparent_70%)]"></div>
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Column - Text Content */}
+            <div>
+              <div className="mb-4">
+                <span className="text-sm font-semibold uppercase tracking-wider text-purple-600">Gift Flow</span>
+              </div>
+              <h2 className="text-5xl font-bold leading-[1.05] tracking-[-0.02em] text-gray-900 sm:text-6xl lg:text-7xl mb-6">
+                Turn top customers into{" "}
+                <span className="text-rose-600">powerful advocates</span>
+              </h2>
+              <p className="text-xl leading-relaxed text-gray-600 max-w-xl mb-8">
+                Send personalized gifts to your most valuable customers. They share with friends and family, creating organic growth through word-of-mouth referrals.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="h-6 w-6 rounded-full bg-rose-100 flex items-center justify-center">
+                      <svg className="h-4 w-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-900 mb-1">Target top customers</h3>
+                    <p className="text-sm text-gray-600">Identify and reward your most valuable customers with personalized gifts</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="h-6 w-6 rounded-full bg-rose-100 flex items-center justify-center">
+                      <svg className="h-4 w-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-900 mb-1">Enable sharing</h3>
+                    <p className="text-sm text-gray-600">Recipients easily share gifts and discounts with their network</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="h-6 w-6 rounded-full bg-rose-100 flex items-center justify-center">
+                      <svg className="h-4 w-4 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold text-gray-900 mb-1">Drive organic growth</h3>
+                    <p className="text-sm text-gray-600">Turn loyal customers into brand advocates who bring in new buyers</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Animated Visual */}
+            <div className="relative h-[600px] lg:h-[700px]">
+              {/* SVG Container for all connections */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{ overflow: 'visible' }}>
+                <defs>
+                  <linearGradient id="gradient-gift" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.2" />
+                  </linearGradient>
+                  <linearGradient id="gradient-discount" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.2" />
+                  </linearGradient>
+                </defs>
+                
+                {/* Connection Lines from Brand to Top Customers */}
+                <line x1="50%" y1="8%" x2="20%" y2="45%" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
+                <line x1="50%" y1="8%" x2="50%" y2="50%" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
+                <line x1="50%" y1="8%" x2="80%" y2="48%" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
+                
+                {/* Animated Gift Icons */}
+                <g className="animate-flow-gift" style={{ animationDelay: '0s' }}>
+                  <circle cx="50%" cy="20%" r="8" fill="#f43f5e" className="animate-pulse" />
+                  <svg x="calc(50% - 8px)" y="calc(20% - 8px)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                    <path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                  </svg>
+                </g>
+                <g className="animate-flow-gift" style={{ animationDelay: '0.3s' }}>
+                  <circle cx="50%" cy="20%" r="8" fill="#f43f5e" className="animate-pulse" />
+                  <svg x="calc(50% - 8px)" y="calc(20% - 8px)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                    <path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                  </svg>
+                </g>
+                <g className="animate-flow-gift" style={{ animationDelay: '0.6s' }}>
+                  <circle cx="50%" cy="20%" r="8" fill="#f43f5e" className="animate-pulse" />
+                  <svg x="calc(50% - 8px)" y="calc(20% - 8px)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                    <path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                  </svg>
+                </g>
+                
+                {/* Connection Lines from Top Customers to Friends */}
+                <line x1="20%" y1="45%" x2="10%" y2="75%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                <line x1="20%" y1="45%" x2="25%" y2="78%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                <line x1="50%" y1="50%" x2="40%" y2="80%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                <line x1="50%" y1="50%" x2="60%" y2="82%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                <line x1="80%" y1="48%" x2="75%" y2="79%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                <line x1="80%" y1="48%" x2="90%" y2="76%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                
+                {/* Animated Discount Icons */}
+                {[0, 0.2, 0.4, 0.6, 0.8, 1.0].map((delay, i) => (
+                  <g key={`discount-${i}`} className="animate-flow-discount" style={{ animationDelay: `${1.5 + delay}s` }}>
+                    <circle cx={i < 2 ? '15%' : i < 4 ? '50%' : '85%'} cy="60%" r="6" fill="#10b981" className="animate-pulse" />
+                    <text x={i < 2 ? '15%' : i < 4 ? '50%' : '85%'} y="calc(60% + 2px)" textAnchor="middle" className="text-[8px] font-bold fill-white">%</text>
+                  </g>
+                ))}
+              </svg>
+
+              {/* Background Grid */}
+              <div className="absolute inset-0 opacity-[0.03] z-0">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:2rem_2rem]"></div>
+              </div>
+
+              {/* Brand Card */}
+              <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-32 h-32 rounded-2xl bg-white border-2 border-gray-200 shadow-xl flex flex-col items-center justify-center z-30">
+                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center mb-2">
+                  <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <span className="text-xs font-semibold text-gray-900">Brand</span>
+              </div>
+
+              {/* Many Users (Grayed Out) */}
+              <div className="absolute top-48 left-0 right-0 z-10">
+                {Array.from({ length: 12 }).map((_, i) => {
+                  const positions = [
+                    { left: '5%', top: '0%' }, { left: '15%', top: '10%' }, { left: '25%', top: '5%' },
+                    { left: '35%', top: '15%' }, { left: '45%', top: '8%' }, { left: '55%', top: '12%' },
+                    { left: '65%', top: '6%' }, { left: '75%', top: '14%' }, { left: '85%', top: '9%' },
+                    { left: '10%', top: '20%' }, { left: '30%', top: '18%' }, { left: '70%', top: '22%' }
+                  ];
+                  const pos = positions[i] || { left: '50%', top: '0%' };
+                  return (
+                    <div
+                      key={`user-${i}`}
+                      className="absolute w-16 h-16 rounded-xl bg-white border border-gray-200 flex items-center justify-center opacity-40"
+                      style={{ left: pos.left, top: pos.top }}
+                    >
+                      <svg className="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Top Customers (Highlighted) */}
+              {[
+                { left: '20%', top: '45%' },
+                { left: '50%', top: '50%' },
+                { left: '80%', top: '48%' }
+              ].map((pos, i) => (
+                <div key={`top-customer-${i}`} className="absolute z-20" style={{ left: pos.left, top: pos.top, transform: 'translate(-50%, -50%)' }}>
+                  <div className="w-20 h-20 rounded-2xl bg-white border-2 border-rose-500 shadow-xl flex flex-col items-center justify-center animate-pulse-slow">
+                    <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center mb-1">
+                      <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                      </svg>
+                    </div>
+                    <span className="text-xs font-semibold text-gray-900">Top Customer</span>
+                  </div>
+                </div>
+              ))}
+
+              {/* Friends & Family Cards */}
+              {[
+                { left: '10%', top: '75%' },
+                { left: '25%', top: '78%' },
+                { left: '40%', top: '80%' },
+                { left: '60%', top: '82%' },
+                { left: '75%', top: '79%' },
+                { left: '90%', top: '76%' }
+              ].map((pos, i) => (
+                <div key={`friend-${i}`} className="absolute z-10 opacity-0 animate-fade-in-delay" style={{ left: pos.left, top: pos.top, transform: 'translate(-50%, -50%)', animationDelay: `${1.5 + i * 0.2}s` }}>
+                  <div className="w-16 h-16 rounded-xl bg-white border border-gray-300 flex flex-col items-center justify-center">
+                    <svg className="h-5 w-5 text-gray-600 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span className="text-[10px] font-medium text-gray-600">Friends</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Built to help you grow customers Section - Asymmetric Design */}
       <section className="bg-white pt-20 pb-24 px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">

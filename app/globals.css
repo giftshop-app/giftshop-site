@@ -79,3 +79,76 @@ body {
 .animate-marquee-reverse {
   animation: marquee-reverse 35s linear infinite;
 }
+
+/* Gift Flow Animation */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes flow-gift {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--flow-x, 0), var(--flow-y, 200px));
+    opacity: 0;
+  }
+}
+
+@keyframes flow-discount {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--flow-x, 0), var(--flow-y, 150px));
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-delay {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+.animate-flow-gift {
+  animation: flow-gift 2s ease-in-out infinite;
+}
+
+.animate-flow-discount {
+  animation: flow-discount 1.5s ease-in-out infinite;
+}
+
+.animate-fade-in-delay {
+  animation: fade-in-delay 0.5s ease-out forwards;
+}
