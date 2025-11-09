@@ -53,79 +53,69 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative py-24 sm:py-32 px-6 lg:px-8 overflow-hidden">
-        {/* Custom Background with Organic Shapes */}
-        <div className="absolute inset-0 bg-gradient-to-br from-rose-50/80 via-pink-50/60 to-orange-50/80"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(251,113,133,0.15),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(249,168,212,0.15),transparent_50%)]"></div>
+      {/* Hero Section - Stripe-inspired */}
+      <section className="relative py-32 sm:py-40 px-6 lg:px-8 overflow-hidden bg-white">
+        {/* Subtle Background Gradient - Stripe style */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-white to-white"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(251,113,133,0.05),transparent_70%)]"></div>
         
-        {/* Organic Blob Shapes */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-32 -left-20 w-96 h-96 bg-rose-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob"></div>
-          <div className="absolute top-64 right-10 w-[500px] h-[500px] bg-pink-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-2000"></div>
-          <div className="absolute -bottom-20 left-1/3 w-[450px] h-[450px] bg-orange-200/40 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-blob animation-delay-4000"></div>
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
         </div>
 
         {/* Content */}
-        <div className="relative z-10 mx-auto max-w-5xl">
-          {/* Banner - Asymmetric Design */}
-          <div className="mb-10 flex justify-center">
-            <div className="inline-flex items-center gap-2.5 rounded-full bg-white/90 backdrop-blur-sm px-5 py-2.5 border border-rose-200/50 shadow-sm">
-              <svg className="h-4 w-4 text-rose-500" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <span className="text-sm font-semibold text-rose-700">Now available for all Shopify stores</span>
+        <div className="relative z-10 mx-auto max-w-6xl">
+          {/* Banner - Minimal Stripe style */}
+          <div className="mb-12 flex justify-center">
+            <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 border border-gray-200/50">
+              <span className="text-xs font-semibold uppercase tracking-wider text-gray-600">Now available for all Shopify stores</span>
             </div>
           </div>
 
-          {/* Main Headline - More Dynamic Typography */}
-          <h1 className="text-center text-6xl font-extrabold leading-[1.1] tracking-tight text-gray-900 sm:text-7xl lg:text-8xl">
+          {/* Main Headline - Stripe typography style */}
+          <h1 className="text-center text-7xl font-bold leading-[1.05] tracking-[-0.02em] text-gray-900 sm:text-8xl lg:text-[7.5rem]">
             Turn{" "}
             <span className="relative inline-block text-rose-600">
               top customers
-              <svg className="absolute -bottom-2 left-0 right-0 h-3 text-rose-600/40" fill="currentColor" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0,8 Q25,2 50,5 T100,3" stroke="currentColor" strokeWidth="2" fill="none" />
-              </svg>
+              <span className="absolute -bottom-1 left-0 right-0 h-2 bg-rose-600/20 rounded-full"></span>
             </span>
             {" "}into{" "}
             <span className="relative inline-block text-rose-600">
               powerful
-              <svg className="absolute -bottom-2 left-0 right-0 h-3 text-rose-600/40" fill="currentColor" viewBox="0 0 100 10" preserveAspectRatio="none">
-                <path d="M0,8 Q25,2 50,5 T100,3" stroke="currentColor" strokeWidth="2" fill="none" />
-              </svg>
+              <span className="absolute -bottom-1 left-0 right-0 h-2 bg-rose-600/20 rounded-full"></span>
             </span>
             {" "}ambassadors
           </h1>
 
-          {/* Subheadline - Better Typography */}
-          <p className="mx-auto mt-8 max-w-2xl text-center text-xl leading-relaxed text-gray-700 font-medium">
+          {/* Subheadline - Stripe style */}
+          <p className="mx-auto mt-10 max-w-2xl text-center text-xl leading-relaxed text-gray-600">
             Giftshop helps leading Shopify merchants drive growth and build loyalty through personalized gifting and referral campaigns.
           </p>
 
-          {/* CTA Buttons - More Unique Styling */}
-          <div className="mt-12 flex items-center justify-center gap-5">
-            <button className="group flex items-center gap-2.5 rounded-2xl bg-gradient-to-r from-rose-500 to-rose-600 px-8 py-4 text-base font-bold text-white shadow-xl shadow-rose-500/30 hover:shadow-2xl hover:shadow-rose-500/40 transition-all hover:scale-105">
+          {/* CTA Buttons - Stripe style */}
+          <div className="mt-14 flex items-center justify-center gap-4">
+            <button className="group flex items-center gap-2 rounded-lg bg-gray-900 px-6 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all">
               Get Started for Free
-              <svg className="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
-            <button className="rounded-2xl border-2 border-gray-300 bg-white px-8 py-4 text-base font-bold text-gray-800 hover:bg-gray-50 hover:border-gray-400 transition-all">
+            <button className="rounded-lg border border-gray-300 bg-white px-6 py-3.5 text-base font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all">
               Watch Demo
             </button>
           </div>
 
-          {/* Feature Points - Custom Design */}
-          <div className="mt-10 flex items-center justify-center gap-8 text-sm text-gray-600">
-            <div className="flex items-center gap-2.5">
-              <div className="h-2.5 w-2.5 rounded-full bg-rose-500 shadow-sm"></div>
-              <span className="font-medium">14-day free trial</span>
+          {/* Feature Points - Minimal Stripe style */}
+          <div className="mt-12 flex items-center justify-center gap-6 text-sm text-gray-500">
+            <div className="flex items-center gap-2">
+              <div className="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
+              <span>14-day free trial</span>
             </div>
-            <div className="h-4 w-px bg-gray-300"></div>
-            <div className="flex items-center gap-2.5">
-              <div className="h-2.5 w-2.5 rounded-full bg-purple-500 shadow-sm"></div>
-              <span className="font-medium">Setup in 2 minutes</span>
+            <div className="h-3 w-px bg-gray-300"></div>
+            <div className="flex items-center gap-2">
+              <div className="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
+              <span>Setup in 2 minutes</span>
             </div>
           </div>
         </div>
