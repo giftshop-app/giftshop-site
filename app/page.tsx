@@ -71,8 +71,9 @@ export default function Home() {
             <div>
               {/* Banner - Minimal Stripe style */}
               <div className="mb-4">
-                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 border border-gray-200/50">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-gray-600">Now available for all Shopify stores</span>
+                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1 border border-gray-200/50">
+                  <img src="/shopify-assets/shopify_glyph.svg" alt="Shopify" className="h-3.5 w-3.5" />
+                  <span className="text-[10px] font-medium uppercase tracking-wider text-gray-600">Now available for all Shopify stores</span>
                 </div>
               </div>
 
