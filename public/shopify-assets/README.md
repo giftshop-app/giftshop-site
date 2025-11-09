@@ -4,10 +4,14 @@ This folder contains official Shopify brand assets downloaded from [Shopify Bran
 
 ## How to Download Assets
 
+**📋 See `DOWNLOAD_INSTRUCTIONS.md` for detailed step-by-step instructions.**
+
+Quick steps:
 1. Visit https://www.shopify.com/uk/brand-assets
 2. Click "Download all brand assets" at the top of the page
 3. Extract the downloaded ZIP file
-4. Organize the files in this folder according to the structure below
+4. Follow the organization guide in `DOWNLOAD_INSTRUCTIONS.md` to copy files to the correct folders
+5. Add all files to git: `git add public/shopify-assets/ && git commit -m "Add Shopify brand assets"`
 
 ## Recommended Folder Structure
 
