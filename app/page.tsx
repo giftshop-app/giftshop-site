@@ -102,26 +102,6 @@ export default function Home() {
                 </a>
               </div>
 
-              {/* Secondary CTA - Newsletter Signup */}
-              <div className="mt-4">
-                <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
-                  <span>or</span>
-                  <span>sign up to our newsletter</span>
-                </div>
-                <div className="flex items-center gap-2 max-w-xs">
-                  <div className="flex-1 rounded-lg border border-gray-300 bg-white px-3 py-2 shadow-sm focus-within:border-gray-400 focus-within:ring-1 focus-within:ring-gray-400">
-                    <input
-                      type="email"
-                      placeholder="Email address"
-                      className="w-full text-sm text-gray-900 placeholder-gray-400 outline-none"
-                    />
-                  </div>
-                  <button className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all whitespace-nowrap">
-                    Subscribe
-                  </button>
-                </div>
-              </div>
-
               {/* Feature Points - Minimal Stripe style */}
               <div className="mt-6 flex items-center gap-6 text-sm text-gray-500">
                 <div className="flex items-center gap-2">
@@ -660,9 +640,26 @@ export default function Home() {
                 </div>
                 <span className="text-2xl font-bold text-white">Giftshop</span>
               </div>
-              <p className="text-base leading-7 text-gray-400">
+              <p className="text-base leading-7 text-gray-400 mb-6">
                 The premier gifting platform for Shopify merchants. Built to drive growth, loyalty, and customer lifetime value.
               </p>
+              
+              {/* Newsletter Signup */}
+              <div>
+                <h3 className="text-sm font-semibold text-white mb-3">Sign up to our newsletter</h3>
+                <div className="flex items-center gap-2">
+                  <div className="flex-1 rounded-lg border border-gray-700 bg-gray-900 px-3 py-2 focus-within:border-gray-600 focus-within:ring-1 focus-within:ring-gray-600">
+                    <input
+                      type="email"
+                      placeholder="Email address"
+                      className="w-full text-sm text-white placeholder-gray-500 outline-none bg-transparent"
+                    />
+                  </div>
+                  <button className="rounded-lg border border-gray-700 bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-800 hover:border-gray-600 transition-all whitespace-nowrap">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
             </div>
 
             {/* Column 2: Product */}
