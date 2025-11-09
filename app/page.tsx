@@ -1,11 +1,13 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Home() {
   const words = ["grow", "scale", "retain", "delight", "engage", "convert"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [scrollY, setScrollY] = useState(0);
+  const [isBrandsVisible, setIsBrandsVisible] = useState(false);
+  const brandsSectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,6 +24,29 @@ export default function Home() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsBrandsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (brandsSectionRef.current) {
+      observer.observe(brandsSectionRef.current);
+    }
+
+    return () => {
+      if (brandsSectionRef.current) {
+        observer.unobserve(brandsSectionRef.current);
+      }
+    };
   }, []);
 
   return (
@@ -215,40 +240,98 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trusted Brands Section - Asymmetric Layout */}
-      <section className="relative pt-12 pb-20 px-6 lg:px-8 overflow-hidden bg-white">
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_1px_1px,rgb(0,0,0)_1px,transparent_0)] [background-size:24px_24px]"></div>
-        </div>
-        
+      {/* Trusted Brands Section - Animated Marquee */}
+      <section ref={brandsSectionRef} className="relative pt-20 pb-32 px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-white via-gray-50/30 to-white">
+        {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-32 w-80 h-80 bg-rose-50 rounded-full mix-blend-multiply filter blur-3xl opacity-25"></div>
-          <div className="absolute bottom-20 left-32 w-80 h-80 bg-orange-50 rounded-full mix-blend-multiply filter blur-3xl opacity-25"></div>
+          <div className="absolute top-20 right-32 w-96 h-96 bg-rose-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+          <div className="absolute bottom-20 left-32 w-96 h-96 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl">
-          {/* Section Headline - More Unique */}
-          <div className="mb-16 text-center">
-            <div className="inline-flex items-center gap-3 mb-4">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-rose-300"></div>
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-rose-600">Trusted by Leading Brands</span>
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-rose-300"></div>
+          {/* Section Headline - Animated */}
+          <div className={`mb-16 text-center transition-all duration-1000 ${isBrandsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <div className="inline-flex items-center gap-4 mb-6">
+              <div className="h-px w-16 bg-gradient-to-r from-transparent via-rose-400 to-rose-300"></div>
+              <span className="text-sm font-bold uppercase tracking-[0.3em] text-rose-600">Trusted by Leading Brands</span>
+              <div className="h-px w-16 bg-gradient-to-l from-transparent via-rose-400 to-rose-300"></div>
+            </div>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Join thousands of merchants growing their business with Giftshop
+            </p>
+          </div>
+
+          {/* Infinite Marquee Container */}
+          <div className="relative overflow-hidden">
+            {/* Gradient Overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-20 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-20 pointer-events-none"></div>
+            
+            {/* Marquee Track 1 */}
+            <div className="flex animate-marquee gap-6 mb-6">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <div
+                  key={`track1-${i}`}
+                  className={`group flex-shrink-0 flex h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105 ${
+                    isBrandsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+                  style={{ transitionDelay: `${i * 100}ms` }}
+                >
+                  <div className="px-6 text-center">
+                    <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors">Brand {i + 1}</span>
+                  </div>
+                </div>
+              ))}
+              {/* Duplicate for seamless loop */}
+              {Array.from({ length: 8 }).map((_, i) => (
+                <div
+                  key={`track1-dup-${i}`}
+                  className="group flex-shrink-0 flex h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+                >
+                  <div className="px-6 text-center">
+                    <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors">Brand {i + 1}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Marquee Track 2 - Reverse Direction */}
+            <div className="flex animate-marquee-reverse gap-6">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <div
+                  key={`track2-${i}`}
+                  className={`group flex-shrink-0 flex h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105 ${
+                    isBrandsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}
+                  style={{ transitionDelay: `${(i + 8) * 100}ms` }}
+                >
+                  <div className="px-6 text-center">
+                    <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors">Brand {i + 9}</span>
+                  </div>
+                </div>
+              ))}
+              {/* Duplicate for seamless loop */}
+              {Array.from({ length: 8 }).map((_, i) => (
+                <div
+                  key={`track2-dup-${i}`}
+                  className="group flex-shrink-0 flex h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+                >
+                  <div className="px-6 text-center">
+                    <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors">Brand {i + 9}</span>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* Brand Logos Grid - Staggered Layout */}
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8">
-            {Array.from({ length: 8 }).map((_, i) => (
-              <div
-                key={i}
-                className="group flex h-28 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-200 hover:shadow-lg hover:shadow-rose-100/50 transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="px-4 text-center">
-                  <span className="text-sm font-bold text-gray-700 group-hover:text-rose-600 transition-colors">Brand {i + 1}</span>
-                </div>
-              </div>
-            ))}
+          {/* Scroll Indicator */}
+          <div className={`mt-16 text-center transition-all duration-1000 delay-500 ${isBrandsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+            <div className="inline-flex flex-col items-center gap-2 text-gray-400 animate-bounce">
+              <span className="text-sm font-medium">Scroll to explore more</span>
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
           </div>
         </div>
       </section>
