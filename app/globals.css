@@ -92,36 +92,104 @@ body {
   }
 }
 
-@keyframes flow-gift {
+@keyframes flow-gift-left {
   0% {
     transform: translate(-50%, -50%) translate(0, 0);
     opacity: 0;
   }
-  10% {
+  5% {
     opacity: 1;
   }
-  90% {
+  95% {
     opacity: 1;
   }
   100% {
-    transform: translate(-50%, -50%) translate(var(--flow-x, 0), var(--flow-y, 200px));
+    transform: translate(-50%, -50%) translate(-300px, 235px);
     opacity: 0;
   }
 }
 
-@keyframes flow-discount {
+@keyframes flow-gift-center {
   0% {
     transform: translate(-50%, -50%) translate(0, 0);
     opacity: 0;
   }
-  10% {
+  5% {
     opacity: 1;
   }
-  90% {
+  95% {
     opacity: 1;
   }
   100% {
-    transform: translate(-50%, -50%) translate(var(--flow-x, 0), var(--flow-y, 150px));
+    transform: translate(-50%, -50%) translate(0, 270px);
+    opacity: 0;
+  }
+}
+
+@keyframes flow-gift-right {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(300px, 256px);
+    opacity: 0;
+  }
+}
+
+@keyframes flow-discount-1 {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(-100px, 210px);
+    opacity: 0;
+  }
+}
+
+@keyframes flow-discount-2 {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(50px, 231px);
+    opacity: 0;
+  }
+}
+
+@keyframes flow-discount-3 {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(-100px, 250px);
     opacity: 0;
   }
 }
@@ -141,12 +209,28 @@ body {
   animation: pulse-slow 3s ease-in-out infinite;
 }
 
-.animate-flow-gift {
-  animation: flow-gift 2s ease-in-out infinite;
+.animate-flow-gift-left {
+  animation: flow-gift-left 2.5s ease-in-out infinite;
 }
 
-.animate-flow-discount {
-  animation: flow-discount 1.5s ease-in-out infinite;
+.animate-flow-gift-center {
+  animation: flow-gift-center 2.5s ease-in-out infinite;
+}
+
+.animate-flow-gift-right {
+  animation: flow-gift-right 2.5s ease-in-out infinite;
+}
+
+.animate-flow-discount-1 {
+  animation: flow-discount-1 2s ease-in-out infinite;
+}
+
+.animate-flow-discount-2 {
+  animation: flow-discount-2 2s ease-in-out infinite;
+}
+
+.animate-flow-discount-3 {
+  animation: flow-discount-3 2s ease-in-out infinite;
 }
 
 .animate-fade-in-delay {

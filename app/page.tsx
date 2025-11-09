@@ -397,121 +397,123 @@ export default function Home() {
 
             {/* Right Column - Animated Visual */}
             <div className="relative h-[600px] lg:h-[700px]">
-              {/* SVG Container for connection lines only */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1000 700" preserveAspectRatio="none">
+              {/* Background Grid */}
+              <div className="absolute inset-0 opacity-[0.02] z-0">
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
+              </div>
+
+              {/* SVG Container for connection lines */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 1000 700" preserveAspectRatio="none">
                 <defs>
-                  <linearGradient id="gradient-gift" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.6" />
-                    <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.2" />
+                  <linearGradient id="gradient-gift-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.1" />
                   </linearGradient>
-                  <linearGradient id="gradient-discount" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.5" />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.2" />
+                  <linearGradient id="gradient-gift-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="gradient-gift-3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="gradient-discount-1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="gradient-discount-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="gradient-discount-3" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="gradient-discount-4" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="gradient-discount-5" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
+                  </linearGradient>
+                  <linearGradient id="gradient-discount-6" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
+                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
                   </linearGradient>
                 </defs>
                 
-                {/* Connection Lines from Brand (500, 56) to Top Customers */}
-                <line x1="500" y1="56" x2="200" y2="315" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
-                <line x1="500" y1="56" x2="500" y2="350" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
-                <line x1="500" y1="56" x2="800" y2="336" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
+                {/* Connection Lines from Brand to Top Customers */}
+                <line x1="500" y1="80" x2="200" y2="315" stroke="url(#gradient-gift-1)" strokeWidth="2" className="opacity-50" />
+                <line x1="500" y1="80" x2="500" y2="350" stroke="url(#gradient-gift-2)" strokeWidth="2" className="opacity-50" />
+                <line x1="500" y1="80" x2="800" y2="336" stroke="url(#gradient-gift-3)" strokeWidth="2" className="opacity-50" />
                 
                 {/* Connection Lines from Top Customers to Friends */}
-                <line x1="200" y1="315" x2="100" y2="525" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
-                <line x1="200" y1="315" x2="250" y2="546" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
-                <line x1="500" y1="350" x2="400" y2="560" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
-                <line x1="500" y1="350" x2="600" y2="574" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
-                <line x1="800" y1="336" x2="750" y2="553" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
-                <line x1="800" y1="336" x2="900" y2="532" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                <line x1="200" y1="315" x2="100" y2="525" stroke="url(#gradient-discount-1)" strokeWidth="1.5" className="opacity-30" />
+                <line x1="200" y1="315" x2="250" y2="546" stroke="url(#gradient-discount-2)" strokeWidth="1.5" className="opacity-30" />
+                <line x1="500" y1="350" x2="400" y2="560" stroke="url(#gradient-discount-3)" strokeWidth="1.5" className="opacity-30" />
+                <line x1="500" y1="350" x2="600" y2="574" stroke="url(#gradient-discount-4)" strokeWidth="1.5" className="opacity-30" />
+                <line x1="800" y1="336" x2="750" y2="553" stroke="url(#gradient-discount-5)" strokeWidth="1.5" className="opacity-30" />
+                <line x1="800" y1="336" x2="900" y2="532" stroke="url(#gradient-discount-6)" strokeWidth="1.5" className="opacity-30" />
               </svg>
-              
-              {/* Animated Gift Icons - Using CSS divs */}
-              {[
-                { left: '50%', top: '8%', flowX: '-30%', flowY: '37%' },
-                { left: '50%', top: '8%', flowX: '0%', flowY: '42%' },
-                { left: '50%', top: '8%', flowX: '30%', flowY: '40%' }
-              ].map((path, i) => (
-                <div
-                  key={`gift-${i}`}
-                  className="absolute animate-flow-gift z-20"
-                  style={{
-                    left: path.left,
-                    top: path.top,
-                    animationDelay: `${i * 0.3}s`,
-                    '--flow-x': path.flowX,
-                    '--flow-y': path.flowY
-                  } as React.CSSProperties}
-                >
-                  <div className="h-4 w-4 rounded-full bg-rose-500 flex items-center justify-center animate-pulse">
+
+              {/* Brand Card */}
+              <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-28 h-28 rounded-2xl bg-white border border-gray-200 shadow-lg flex flex-col items-center justify-center z-30">
+                <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center mb-2">
+                  <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <span className="text-[10px] font-semibold text-gray-900">Brand</span>
+              </div>
+
+              {/* Many Users (Grayed Out) - Cleaner positioning */}
+              <div className="absolute top-48 left-0 right-0 z-10">
+                {[
+                  { left: '8%', top: '5%' }, { left: '18%', top: '12%' }, { left: '28%', top: '8%' },
+                  { left: '38%', top: '15%' }, { left: '48%', top: '10%' }, { left: '58%', top: '13%' },
+                  { left: '68%', top: '7%' }, { left: '78%', top: '16%' }, { left: '88%', top: '11%' },
+                  { left: '12%', top: '22%' }, { left: '32%', top: '20%' }, { left: '72%', top: '24%' }
+                ].map((pos, i) => (
+                  <div
+                    key={`user-${i}`}
+                    className="absolute w-14 h-14 rounded-xl bg-white border border-gray-200 flex items-center justify-center opacity-30"
+                    style={{ left: pos.left, top: pos.top }}
+                  >
+                    <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                ))}
+              </div>
+
+              {/* Animated Gift Icons - Starting from Brand */}
+              <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-25">
+                <div className={`animate-flow-gift-left`} style={{ animationDelay: '0s' }}>
+                  <div className="h-5 w-5 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
                     <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                     </svg>
                   </div>
                 </div>
-              ))}
-              
-              {/* Animated Discount Icons - Using CSS divs */}
-              {[
-                { left: '20%', top: '45%', flowX: '-10%', flowY: '30%' },
-                { left: '20%', top: '45%', flowX: '5%', flowY: '33%' },
-                { left: '50%', top: '50%', flowX: '-10%', flowY: '30%' },
-                { left: '50%', top: '50%', flowX: '10%', flowY: '32%' },
-                { left: '80%', top: '48%', flowX: '-5%', flowY: '31%' },
-                { left: '80%', top: '48%', flowX: '10%', flowY: '28%' }
-              ].map((path, i) => (
-                <div
-                  key={`discount-${i}`}
-                  className="absolute animate-flow-discount z-20"
-                  style={{
-                    left: path.left,
-                    top: path.top,
-                    animationDelay: `${1.5 + i * 0.2}s`,
-                    '--flow-x': path.flowX,
-                    '--flow-y': path.flowY
-                  } as React.CSSProperties}
-                >
-                  <div className="h-3 w-3 rounded-full bg-green-500 flex items-center justify-center animate-pulse">
-                    <span className="text-[6px] font-bold text-white">%</span>
+              </div>
+              <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-25">
+                <div className={`animate-flow-gift-center`} style={{ animationDelay: '0.4s' }}>
+                  <div className="h-5 w-5 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
+                    <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                    </svg>
                   </div>
                 </div>
-              ))}
-
-              {/* Background Grid */}
-              <div className="absolute inset-0 opacity-[0.03] z-0">
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:2rem_2rem]"></div>
               </div>
-
-              {/* Brand Card */}
-              <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-32 h-32 rounded-2xl bg-white border-2 border-gray-200 shadow-xl flex flex-col items-center justify-center z-30">
-                <div className="h-12 w-12 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center mb-2">
-                  <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
+              <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-25">
+                <div className={`animate-flow-gift-right`} style={{ animationDelay: '0.8s' }}>
+                  <div className="h-5 w-5 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
+                    <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                    </svg>
+                  </div>
                 </div>
-                <span className="text-xs font-semibold text-gray-900">Brand</span>
-              </div>
-
-              {/* Many Users (Grayed Out) */}
-              <div className="absolute top-48 left-0 right-0 z-10">
-                {Array.from({ length: 12 }).map((_, i) => {
-                  const positions = [
-                    { left: '5%', top: '0%' }, { left: '15%', top: '10%' }, { left: '25%', top: '5%' },
-                    { left: '35%', top: '15%' }, { left: '45%', top: '8%' }, { left: '55%', top: '12%' },
-                    { left: '65%', top: '6%' }, { left: '75%', top: '14%' }, { left: '85%', top: '9%' },
-                    { left: '10%', top: '20%' }, { left: '30%', top: '18%' }, { left: '70%', top: '22%' }
-                  ];
-                  const pos = positions[i] || { left: '50%', top: '0%' };
-                  return (
-                    <div
-                      key={`user-${i}`}
-                      className="absolute w-16 h-16 rounded-xl bg-white border border-gray-200 flex items-center justify-center opacity-40"
-                      style={{ left: pos.left, top: pos.top }}
-                    >
-                      <svg className="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                      </svg>
-                    </div>
-                  );
-                })}
               </div>
 
               {/* Top Customers (Highlighted) */}
@@ -521,16 +523,39 @@ export default function Home() {
                 { left: '80%', top: '48%' }
               ].map((pos, i) => (
                 <div key={`top-customer-${i}`} className="absolute z-20" style={{ left: pos.left, top: pos.top, transform: 'translate(-50%, -50%)' }}>
-                  <div className="w-20 h-20 rounded-2xl bg-white border-2 border-rose-500 shadow-xl flex flex-col items-center justify-center animate-pulse-slow">
-                    <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center mb-1">
+                  <div className="w-24 h-24 rounded-2xl bg-white border-2 border-rose-500 shadow-xl flex flex-col items-center justify-center">
+                    <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-rose-500 to-rose-600 flex items-center justify-center mb-1.5">
                       <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                       </svg>
                     </div>
-                    <span className="text-xs font-semibold text-gray-900">Top Customer</span>
+                    <span className="text-[10px] font-semibold text-gray-900">Top Customer</span>
                   </div>
                 </div>
               ))}
+
+              {/* Animated Discount Icons - Starting from Top Customers */}
+              <div className="absolute top-[45%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 z-25">
+                <div className={`animate-flow-discount-1`} style={{ animationDelay: '2s' }}>
+                  <div className="h-4 w-4 rounded-full bg-green-500 flex items-center justify-center shadow-md">
+                    <span className="text-[7px] font-bold text-white">%</span>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-[45%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 z-25">
+                <div className={`animate-flow-discount-2`} style={{ animationDelay: '2.2s' }}>
+                  <div className="h-4 w-4 rounded-full bg-green-500 flex items-center justify-center shadow-md">
+                    <span className="text-[7px] font-bold text-white">%</span>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-25">
+                <div className={`animate-flow-discount-3`} style={{ animationDelay: '2.4s' }}>
+                  <div className="h-4 w-4 rounded-full bg-green-500 flex items-center justify-center shadow-md">
+                    <span className="text-[7px] font-bold text-white">%</span>
+                  </div>
+                </div>
+              </div>
 
               {/* Friends & Family Cards */}
               {[
@@ -541,12 +566,12 @@ export default function Home() {
                 { left: '75%', top: '79%' },
                 { left: '90%', top: '76%' }
               ].map((pos, i) => (
-                <div key={`friend-${i}`} className="absolute z-10 opacity-0 animate-fade-in-delay" style={{ left: pos.left, top: pos.top, transform: 'translate(-50%, -50%)', animationDelay: `${1.5 + i * 0.2}s` }}>
-                  <div className="w-16 h-16 rounded-xl bg-white border border-gray-300 flex flex-col items-center justify-center">
-                    <svg className="h-5 w-5 text-gray-600 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div key={`friend-${i}`} className="absolute z-10" style={{ left: pos.left, top: pos.top, transform: 'translate(-50%, -50%)' }}>
+                  <div className="w-20 h-20 rounded-xl bg-white border border-gray-200 shadow-md flex flex-col items-center justify-center opacity-0 animate-fade-in-delay" style={{ animationDelay: `${2 + i * 0.15}s` }}>
+                    <svg className="h-5 w-5 text-gray-500 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
-                    <span className="text-[10px] font-medium text-gray-600">Friends</span>
+                    <span className="text-[9px] font-medium text-gray-600">Friends</span>
                   </div>
                 </div>
               ))}
