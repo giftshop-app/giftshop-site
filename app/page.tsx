@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section - Stripe-inspired */}
+      {/* Hero Section - Stripe-inspired with mockups */}
       <section className="relative py-32 sm:py-40 px-6 lg:px-8 overflow-hidden bg-white">
         {/* Subtle Background Gradient - Stripe style */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-white to-white"></div>
@@ -64,58 +64,189 @@ export default function Home() {
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 mx-auto max-w-6xl">
-          {/* Banner - Minimal Stripe style */}
-          <div className="mb-12 flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 border border-gray-200/50">
-              <span className="text-xs font-semibold uppercase tracking-wider text-gray-600">Now available for all Shopify stores</span>
+        {/* Content - Two Column Layout */}
+        <div className="relative z-10 mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Text Content */}
+            <div>
+              {/* Banner - Minimal Stripe style */}
+              <div className="mb-8">
+                <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 border border-gray-200/50">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-gray-600">Now available for all Shopify stores</span>
+                </div>
+              </div>
+
+              {/* Main Headline - Stripe typography style */}
+              <h1 className="text-6xl font-bold leading-[1.05] tracking-[-0.02em] text-gray-900 sm:text-7xl lg:text-8xl">
+                Turn{" "}
+                <span className="relative inline-block text-rose-600">
+                  top customers
+                  <span className="absolute -bottom-1 left-0 right-0 h-2 bg-rose-600/20 rounded-full"></span>
+                </span>
+                {" "}into{" "}
+                <span className="relative inline-block text-rose-600">
+                  powerful
+                  <span className="absolute -bottom-1 left-0 right-0 h-2 bg-rose-600/20 rounded-full"></span>
+                </span>
+                {" "}ambassadors
+              </h1>
+
+              {/* Subheadline - Stripe style */}
+              <p className="mt-8 text-xl leading-relaxed text-gray-600 max-w-xl">
+                Giftshop helps leading Shopify merchants drive growth and build loyalty through personalized gifting and referral campaigns.
+              </p>
+
+              {/* CTA Input - Stripe style */}
+              <div className="mt-10 flex items-center gap-3 max-w-md">
+                <div className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3.5 shadow-sm focus-within:border-gray-400 focus-within:ring-1 focus-within:ring-gray-400">
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="w-full text-base text-gray-900 placeholder-gray-400 outline-none"
+                  />
+                </div>
+                <button className="group flex items-center gap-2 rounded-lg bg-gray-900 px-6 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all whitespace-nowrap">
+                  Start now
+                  <svg className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Feature Points - Minimal Stripe style */}
+              <div className="mt-8 flex items-center gap-6 text-sm text-gray-500">
+                <div className="flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
+                  <span>14-day free trial</span>
+                </div>
+                <div className="h-3 w-px bg-gray-300"></div>
+                <div className="flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
+                  <span>Setup in 2 minutes</span>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Main Headline - Stripe typography style */}
-          <h1 className="text-center text-7xl font-bold leading-[1.05] tracking-[-0.02em] text-gray-900 sm:text-8xl lg:text-[7.5rem]">
-            Turn{" "}
-            <span className="relative inline-block text-rose-600">
-              top customers
-              <span className="absolute -bottom-1 left-0 right-0 h-2 bg-rose-600/20 rounded-full"></span>
-            </span>
-            {" "}into{" "}
-            <span className="relative inline-block text-rose-600">
-              powerful
-              <span className="absolute -bottom-1 left-0 right-0 h-2 bg-rose-600/20 rounded-full"></span>
-            </span>
-            {" "}ambassadors
-          </h1>
+            {/* Right Column - UI Mockups */}
+            <div className="relative hidden lg:block h-[600px]">
+              {/* Mockup 1: Campaign Dashboard (Top) */}
+              <div className="absolute top-0 right-0 w-80 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-2deg] z-20">
+                <div className="p-4 border-b border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-rose-500"></div>
+                      <span className="text-sm font-semibold text-gray-900">Active Campaigns</span>
+                    </div>
+                    <div className="text-xs text-gray-500">Today</div>
+                  </div>
+                </div>
+                <div className="p-4 space-y-4">
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-medium text-gray-600">Gifts Sent</span>
+                      <span className="text-sm font-bold text-gray-900">1,247</span>
+                    </div>
+                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-rose-500 to-rose-600 rounded-full" style={{ width: '78%' }}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-medium text-gray-600">Referrals Generated</span>
+                      <span className="text-sm font-bold text-gray-900">+42.3%</span>
+                    </div>
+                    <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style={{ width: '65%' }}></div>
+                    </div>
+                  </div>
+                  <div className="pt-2 border-t border-gray-100">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-500">Revenue Impact</span>
+                      <span className="text-sm font-bold text-rose-600">$28,492</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-          {/* Subheadline - Stripe style */}
-          <p className="mx-auto mt-10 max-w-2xl text-center text-xl leading-relaxed text-gray-600">
-            Giftshop helps leading Shopify merchants drive growth and build loyalty through personalized gifting and referral campaigns.
-          </p>
+              {/* Mockup 2: Gift Selection Interface (Middle) */}
+              <div className="absolute top-32 right-8 w-96 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[1deg] z-10">
+                <div className="p-5 border-b border-gray-100">
+                  <h3 className="text-base font-bold text-gray-900">Select Gift</h3>
+                  <p className="text-xs text-gray-500 mt-1">Choose a product to send</p>
+                </div>
+                <div className="p-5 space-y-3">
+                  <div className="flex items-center gap-3 p-3 rounded-lg border-2 border-rose-500 bg-rose-50">
+                    <div className="h-12 w-12 rounded-lg bg-gradient-to-br from-rose-400 to-rose-600 flex items-center justify-center">
+                      <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-sm font-semibold text-gray-900">Premium Gift Card</div>
+                      <div className="text-xs text-gray-500">$50 value</div>
+                    </div>
+                    <div className="h-5 w-5 rounded-full border-2 border-rose-500 bg-rose-500 flex items-center justify-center">
+                      <svg className="h-3 w-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 rounded-lg border border-gray-200 hover:border-gray-300">
+                    <div className="h-12 w-12 rounded-lg bg-gray-100 flex items-center justify-center">
+                      <svg className="h-6 w-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <div className="text-sm font-semibold text-gray-900">Product Collection</div>
+                      <div className="text-xs text-gray-500">Select from catalog</div>
+                    </div>
+                  </div>
+                  <div className="pt-3">
+                    <button className="w-full rounded-lg bg-gray-900 px-4 py-3 text-sm font-semibold text-white hover:bg-gray-800 transition-colors">
+                      Send Gift
+                    </button>
+                  </div>
+                </div>
+              </div>
 
-          {/* CTA Buttons - Stripe style */}
-          <div className="mt-14 flex items-center justify-center gap-4">
-            <button className="group flex items-center gap-2 rounded-lg bg-gray-900 px-6 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all">
-              Get Started for Free
-              <svg className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
-            <button className="rounded-lg border border-gray-300 bg-white px-6 py-3.5 text-base font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all">
-              Watch Demo
-            </button>
-          </div>
-
-          {/* Feature Points - Minimal Stripe style */}
-          <div className="mt-12 flex items-center justify-center gap-6 text-sm text-gray-500">
-            <div className="flex items-center gap-2">
-              <div className="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-              <span>14-day free trial</span>
-            </div>
-            <div className="h-3 w-px bg-gray-300"></div>
-            <div className="flex items-center gap-2">
-              <div className="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
-              <span>Setup in 2 minutes</span>
+              {/* Mockup 3: Analytics Chart (Bottom) */}
+              <div className="absolute top-64 right-0 w-72 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-1deg] z-0">
+                <div className="p-4 border-b border-gray-100">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-semibold text-gray-900">Campaign Performance</span>
+                    <span className="text-xs text-gray-500">Last 30 days</span>
+                  </div>
+                </div>
+                <div className="p-4">
+                  <div className="mb-4">
+                    <div className="text-2xl font-bold text-gray-900 mb-1">2,847</div>
+                    <div className="text-xs text-gray-500">Total Gifts Sent</div>
+                    <div className="flex items-center gap-1 mt-2">
+                      <svg className="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                      </svg>
+                      <span className="text-xs font-semibold text-green-600">+28.4%</span>
+                    </div>
+                  </div>
+                  <div className="h-24 bg-gray-50 rounded-lg p-3 flex items-end gap-2">
+                    {[45, 52, 38, 65, 58, 72, 68, 55, 62, 75, 70, 68].map((height, i) => (
+                      <div key={i} className="flex-1 flex items-end">
+                        <div
+                          className="w-full rounded-t bg-gradient-to-t from-rose-500 to-rose-400"
+                          style={{ height: `${height}%` }}
+                        ></div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mt-3 flex items-center justify-between text-xs text-gray-500">
+                    <span>Jan</span>
+                    <span>Mar</span>
+                    <span>May</span>
+                    <span>Jul</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
