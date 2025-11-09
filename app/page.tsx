@@ -477,7 +477,7 @@ export default function Home() {
               </div>
 
               {/* Animated Discount Icons - From Top Customers to Friends */}
-              {/* Left Top Customer -> Friends 1 & 2 */}
+              {/* Left Top Customer -> Friends 1 & 2 (starts after gift 1 reaches) */}
               <div className="absolute top-[45%] left-[calc(50%-112px)] transform -translate-x-1/2 -translate-y-1/2 z-25">
                 <div className="animate-discount-to-friends-left-1" style={{ animationDelay: '2.5s' }}>
                   <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
@@ -493,63 +493,80 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Center Top Customer -> Friends 3 & 4 */}
+              {/* Center Top Customer -> Friends 3 & 4 (starts after gift 2 reaches) */}
               <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className="animate-discount-to-friends-center-1" style={{ animationDelay: '3.1s' }}>
+                <div className="animate-discount-to-friends-center-1" style={{ animationDelay: '3.3s' }}>
                   <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
                     <span className="text-[8px] font-bold text-white">%</span>
                   </div>
                 </div>
               </div>
               <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className="animate-discount-to-friends-center-2" style={{ animationDelay: '3.4s' }}>
+                <div className="animate-discount-to-friends-center-2" style={{ animationDelay: '3.6s' }}>
                   <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
                     <span className="text-[8px] font-bold text-white">%</span>
                   </div>
                 </div>
               </div>
               
-              {/* Right Top Customer -> Friends 5 & 6 */}
+              {/* Right Top Customer -> Friends 5 & 6 (starts after gift 3 reaches) */}
               <div className="absolute top-[45%] left-[calc(50%+112px)] transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className="animate-discount-to-friends-right-1" style={{ animationDelay: '3.7s' }}>
+                <div className="animate-discount-to-friends-right-1" style={{ animationDelay: '4.1s' }}>
                   <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
                     <span className="text-[8px] font-bold text-white">%</span>
                   </div>
                 </div>
               </div>
               <div className="absolute top-[45%] left-[calc(50%+112px)] transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className="animate-discount-to-friends-right-2" style={{ animationDelay: '4s' }}>
+                <div className="animate-discount-to-friends-right-2" style={{ animationDelay: '4.4s' }}>
                   <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
                     <span className="text-[8px] font-bold text-white">%</span>
                   </div>
                 </div>
               </div>
 
-              {/* Simple Connection Lines */}
+              {/* Animated Connection Lines */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none z-5" viewBox="0 0 1000 600" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id="gift-line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.1" />
+                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.2" />
                   </linearGradient>
                   <linearGradient id="discount-line-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
+                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.5" />
+                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.2" />
+                  </linearGradient>
+                  {/* Animated gradient for pulsing effect */}
+                  <linearGradient id="gift-line-pulse" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.8">
+                      <animate attributeName="stop-opacity" values="0.8;0.4;0.8" dur="2.5s" repeatCount="indefinite" />
+                    </stop>
+                    <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.3">
+                      <animate attributeName="stop-opacity" values="0.3;0.1;0.3" dur="2.5s" repeatCount="indefinite" />
+                    </stop>
+                  </linearGradient>
+                  <linearGradient id="discount-line-pulse" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.7">
+                      <animate attributeName="stop-opacity" values="0.7;0.3;0.7" dur="2s" repeatCount="indefinite" />
+                    </stop>
+                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.3">
+                      <animate attributeName="stop-opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite" />
+                    </stop>
                   </linearGradient>
                 </defs>
                 
-                {/* Lines from Brand to Top Customers */}
-                <line x1="500" y1="80" x2="350" y2="225" stroke="url(#gift-line-gradient)" strokeWidth="2" className="opacity-30" />
-                <line x1="500" y1="80" x2="500" y2="225" stroke="url(#gift-line-gradient)" strokeWidth="2" className="opacity-30" />
-                <line x1="500" y1="80" x2="650" y2="225" stroke="url(#gift-line-gradient)" strokeWidth="2" className="opacity-30" />
+                {/* Lines from Brand to Top Customers - More visible */}
+                <line x1="500" y1="80" x2="350" y2="225" stroke="url(#gift-line-pulse)" strokeWidth="3" className="opacity-60" />
+                <line x1="500" y1="80" x2="500" y2="225" stroke="url(#gift-line-pulse)" strokeWidth="3" className="opacity-60" style={{ animationDelay: '0.8s' }} />
+                <line x1="500" y1="80" x2="650" y2="225" stroke="url(#gift-line-pulse)" strokeWidth="3" className="opacity-60" style={{ animationDelay: '1.6s' }} />
                 
-                {/* Lines from Top Customers to Friends */}
-                <line x1="350" y1="225" x2="200" y2="450" stroke="url(#discount-line-gradient)" strokeWidth="1.5" className="opacity-20" />
-                <line x1="350" y1="225" x2="300" y2="450" stroke="url(#discount-line-gradient)" strokeWidth="1.5" className="opacity-20" />
-                <line x1="500" y1="225" x2="400" y2="450" stroke="url(#discount-line-gradient)" strokeWidth="1.5" className="opacity-20" />
-                <line x1="500" y1="225" x2="600" y2="450" stroke="url(#discount-line-gradient)" strokeWidth="1.5" className="opacity-20" />
-                <line x1="650" y1="225" x2="700" y2="450" stroke="url(#discount-line-gradient)" strokeWidth="1.5" className="opacity-20" />
-                <line x1="650" y1="225" x2="800" y2="450" stroke="url(#discount-line-gradient)" strokeWidth="1.5" className="opacity-20" />
+                {/* Lines from Top Customers to Friends - More visible */}
+                <line x1="350" y1="225" x2="200" y2="450" stroke="url(#discount-line-pulse)" strokeWidth="2.5" className="opacity-50" style={{ animationDelay: '2.5s' }} />
+                <line x1="350" y1="225" x2="300" y2="450" stroke="url(#discount-line-pulse)" strokeWidth="2.5" className="opacity-50" style={{ animationDelay: '2.8s' }} />
+                <line x1="500" y1="225" x2="400" y2="450" stroke="url(#discount-line-pulse)" strokeWidth="2.5" className="opacity-50" style={{ animationDelay: '3.3s' }} />
+                <line x1="500" y1="225" x2="600" y2="450" stroke="url(#discount-line-pulse)" strokeWidth="2.5" className="opacity-50" style={{ animationDelay: '3.6s' }} />
+                <line x1="650" y1="225" x2="700" y2="450" stroke="url(#discount-line-pulse)" strokeWidth="2.5" className="opacity-50" style={{ animationDelay: '4.1s' }} />
+                <line x1="650" y1="225" x2="800" y2="450" stroke="url(#discount-line-pulse)" strokeWidth="2.5" className="opacity-50" style={{ animationDelay: '4.4s' }} />
               </svg>
             </div>
           </div>

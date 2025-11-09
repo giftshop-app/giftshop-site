@@ -269,10 +269,12 @@ body {
 
 .animate-gift-to-customer-2 {
   animation: gift-to-customer-2 2.5s ease-in-out infinite;
+  animation-delay: 0.8s;
 }
 
 .animate-gift-to-customer-3 {
   animation: gift-to-customer-3 2.5s ease-in-out infinite;
+  animation-delay: 1.6s;
 }
 
 .animate-discount-to-friends-left-1 {
