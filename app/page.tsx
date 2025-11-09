@@ -128,7 +128,7 @@ export default function Home() {
             </div>
 
             {/* Right Column - UI Mockups */}
-            <div className="relative hidden lg:block h-[750px] min-h-[750px]">
+            <div className="relative hidden lg:block h-[600px] min-h-[600px]">
               {/* Mockup 1: Campaign Dashboard (Top) */}
               <div className="absolute top-0 right-0 w-96 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-2deg] z-20">
                 <div className="p-4 border-b border-gray-100">
@@ -210,43 +210,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Mockup 3: Analytics Chart (Bottom) */}
-              <div className="absolute top-[420px] right-0 w-80 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-1deg] z-0">
-                <div className="p-4 border-b border-gray-100">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-gray-900">Campaign Performance</span>
-                    <span className="text-xs text-gray-500">Last 30 days</span>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <div className="mb-4">
-                    <div className="text-2xl font-bold text-gray-900 mb-1">2,847</div>
-                    <div className="text-xs text-gray-500">Total Gifts Sent</div>
-                    <div className="flex items-center gap-1 mt-2">
-                      <svg className="h-4 w-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                      </svg>
-                      <span className="text-xs font-semibold text-green-600">+28.4%</span>
-                    </div>
-                  </div>
-                  <div className="h-24 bg-gray-50 rounded-lg p-3 flex items-end gap-2">
-                    {[45, 52, 38, 65, 58, 72, 68, 55, 62, 75, 70, 68].map((height, i) => (
-                      <div key={i} className="flex-1 flex items-end">
-                        <div
-                          className="w-full rounded-t bg-gradient-to-t from-rose-500 to-rose-400"
-                          style={{ height: `${height}%` }}
-                        ></div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-3 flex items-center justify-between text-xs text-gray-500">
-                    <span>Jan</span>
-                    <span>Mar</span>
-                    <span>May</span>
-                    <span>Jul</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
