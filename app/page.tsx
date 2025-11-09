@@ -191,7 +191,6 @@ export default function Home() {
                 <div className="p-4 border-b border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="h-2 w-2 rounded-full bg-rose-500"></div>
                       <span className="text-sm font-semibold text-gray-900">Active Campaigns</span>
                     </div>
                     <div className="text-xs text-gray-500">Today</div>
@@ -271,7 +270,7 @@ export default function Home() {
                 >
                   <div className="px-6 text-center">
                     <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors duration-500">Brand {i + 1}</span>
-                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500">see case study</span>
+                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">see case study</span>
                   </div>
                 </a>
               ))}
@@ -285,7 +284,7 @@ export default function Home() {
                 >
                   <div className="px-6 text-center">
                     <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors duration-500">Brand {i + 1}</span>
-                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500">see case study</span>
+                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">see case study</span>
                   </div>
                 </a>
               ))}
@@ -305,7 +304,7 @@ export default function Home() {
                 >
                   <div className="px-6 text-center">
                     <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors duration-500">Brand {i + 9}</span>
-                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500">see case study</span>
+                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">see case study</span>
                   </div>
                 </a>
               ))}
@@ -319,7 +318,7 @@ export default function Home() {
                 >
                   <div className="px-6 text-center">
                     <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors duration-500">Brand {i + 9}</span>
-                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500">see case study</span>
+                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">see case study</span>
                   </div>
                 </a>
               ))}
