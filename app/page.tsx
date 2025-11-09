@@ -260,56 +260,68 @@ export default function Home() {
             {/* Marquee Track 1 */}
             <div className="flex animate-marquee gap-6 mb-6">
               {Array.from({ length: 8 }).map((_, i) => (
-                <div
+                <a
                   key={`track1-${i}`}
-                  className={`group flex-shrink-0 flex h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105 ${
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  className={`group flex-shrink-0 flex flex-col h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105 cursor-pointer ${
                     isBrandsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                   style={{ transitionDelay: `${i * 100}ms` }}
                 >
                   <div className="px-6 text-center">
                     <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors">Brand {i + 1}</span>
+                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">see case study</span>
                   </div>
-                </div>
+                </a>
               ))}
               {/* Duplicate for seamless loop */}
               {Array.from({ length: 8 }).map((_, i) => (
-                <div
+                <a
                   key={`track1-dup-${i}`}
-                  className="group flex-shrink-0 flex h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  className="group flex-shrink-0 flex flex-col h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105 cursor-pointer"
                 >
                   <div className="px-6 text-center">
                     <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors">Brand {i + 1}</span>
+                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">see case study</span>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
 
             {/* Marquee Track 2 - Reverse Direction */}
             <div className="flex animate-marquee-reverse gap-6">
               {Array.from({ length: 8 }).map((_, i) => (
-                <div
+                <a
                   key={`track2-${i}`}
-                  className={`group flex-shrink-0 flex h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105 ${
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  className={`group flex-shrink-0 flex flex-col h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105 cursor-pointer ${
                     isBrandsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                   style={{ transitionDelay: `${(i + 8) * 100}ms` }}
                 >
                   <div className="px-6 text-center">
                     <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors">Brand {i + 9}</span>
+                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">see case study</span>
                   </div>
-                </div>
+                </a>
               ))}
               {/* Duplicate for seamless loop */}
               {Array.from({ length: 8 }).map((_, i) => (
-                <div
+                <a
                   key={`track2-dup-${i}`}
-                  className="group flex-shrink-0 flex h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105"
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  className="group flex-shrink-0 flex flex-col h-32 w-48 items-center justify-center rounded-2xl bg-white border-2 border-gray-100 hover:border-rose-300 hover:shadow-xl hover:shadow-rose-100/50 transition-all duration-500 hover:-translate-y-2 hover:scale-105 cursor-pointer"
                 >
                   <div className="px-6 text-center">
                     <span className="text-base font-bold text-gray-700 group-hover:text-rose-600 transition-colors">Brand {i + 9}</span>
+                    <span className="block mt-2 text-xs font-medium text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">see case study</span>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
