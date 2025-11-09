@@ -137,7 +137,7 @@ export default function Home() {
                   <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                  <span>Setup in 2 minutes</span>
+                  <span>easily set up in just 2 minutes</span>
                 </div>
               </div>
             </div>
