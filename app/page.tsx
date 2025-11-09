@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 export default function Home() {
   const words = ["grow", "scale", "retain", "delight", "engage", "convert"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const headerWords = ["revenue", "customers", "referrals", "LTV"];
+  const headerWords = ["revenue", "customers", "referrals", "loyalty"];
   const [currentHeaderWordIndex, setCurrentHeaderWordIndex] = useState(0);
   const [isBrandsVisible, setIsBrandsVisible] = useState(false);
   const brandsSectionRef = useRef<HTMLDivElement>(null);
