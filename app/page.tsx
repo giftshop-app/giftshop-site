@@ -125,7 +125,7 @@ export default function Home() {
             {/* Right Column - UI Mockups */}
             <div className="relative hidden lg:block h-[550px] min-h-[550px]">
               {/* Mockup 1: Gift Selection Interface (Top) */}
-              <div className="absolute top-0 right-0 w-[420px] rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[1deg] z-20">
+              <div className="absolute top-0 right-12 w-[420px] rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[1deg] z-20">
                 <div className="p-5 border-b border-gray-100">
                   <h3 className="text-base font-bold text-gray-900">Select Gift</h3>
                   <p className="text-xs text-gray-500 mt-1">Choose a product to send</p>
