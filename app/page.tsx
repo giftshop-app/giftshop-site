@@ -73,9 +73,9 @@ export default function Home() {
               <div className="mb-4">
                 <div className="inline-flex items-center gap-3 rounded-full bg-gray-100 px-5 py-2.5 border border-gray-200/50">
                   <img 
-                    src="/shopify-assets/brandmark/shopify_glyph.png" 
+                    src="/shopify-assets/brandmark/shopify_glyph.svg" 
                     alt="Shopify" 
-                    className="h-5 w-5 flex-shrink-0 object-contain"
+                    className="h-5 w-5 flex-shrink-0"
                     width="20"
                     height="20"
                   />
