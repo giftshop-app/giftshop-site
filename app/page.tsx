@@ -78,22 +78,13 @@ export default function Home() {
 
               {/* Main Headline - Stripe typography style */}
               <h1 className="text-5xl font-bold leading-[1.05] tracking-[-0.02em] text-gray-900 sm:text-6xl lg:text-7xl">
-                Turn{" "}
-                <span className="relative inline-block text-rose-600">
-                  top customers
-                  <span className="absolute -bottom-1 left-0 right-0 h-2 bg-rose-600/20 rounded-full"></span>
-                </span>
-                {" "}into{" "}
-                <span className="relative inline-block text-rose-600">
-                  powerful
-                  <span className="absolute -bottom-1 left-0 right-0 h-2 bg-rose-600/20 rounded-full"></span>
-                </span>
-                {" "}ambassadors
+                Gift better.{" "}
+                <span className="text-rose-600">Grow faster.</span>
               </h1>
 
               {/* Subheadline - Stripe style */}
               <p className="mt-6 text-lg leading-relaxed text-gray-600 max-w-xl">
-                Giftshop helps leading Shopify merchants drive growth and build loyalty through personalized gifting and referral campaigns.
+                Giftshop helps leading Shopify merchants drive growth and build loyalty by retaining top customers, and turning them into powerful ambassadors.
               </p>
 
               {/* CTA Input - Stripe style */}
