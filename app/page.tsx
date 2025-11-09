@@ -77,7 +77,7 @@ export default function Home() {
               </div>
 
               {/* Main Headline - Stripe typography style */}
-              <h1 className="text-6xl font-bold leading-[1.05] tracking-[-0.02em] text-gray-900 sm:text-7xl lg:text-8xl">
+              <h1 className="text-5xl font-bold leading-[1.05] tracking-[-0.02em] text-gray-900 sm:text-6xl lg:text-7xl">
                 Turn{" "}
                 <span className="relative inline-block text-rose-600">
                   top customers
@@ -92,12 +92,12 @@ export default function Home() {
               </h1>
 
               {/* Subheadline - Stripe style */}
-              <p className="mt-8 text-xl leading-relaxed text-gray-600 max-w-xl">
+              <p className="mt-6 text-lg leading-relaxed text-gray-600 max-w-xl">
                 Giftshop helps leading Shopify merchants drive growth and build loyalty through personalized gifting and referral campaigns.
               </p>
 
               {/* CTA Input - Stripe style */}
-              <div className="mt-10 flex items-center gap-3 max-w-md">
+              <div className="mt-8 flex items-center gap-3 max-w-md">
                 <div className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3.5 shadow-sm focus-within:border-gray-400 focus-within:ring-1 focus-within:ring-gray-400">
                   <input
                     type="email"
@@ -114,7 +114,7 @@ export default function Home() {
               </div>
 
               {/* Feature Points - Minimal Stripe style */}
-              <div className="mt-8 flex items-center gap-6 text-sm text-gray-500">
+              <div className="mt-6 flex items-center gap-6 text-sm text-gray-500">
                 <div className="flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-gray-400"></div>
                   <span>14-day free trial</span>
