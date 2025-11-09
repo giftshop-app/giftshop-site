@@ -106,7 +106,7 @@ export default function Home() {
 
               {/* Subheadline - Stripe style */}
               <p className="mt-6 text-lg leading-relaxed text-gray-600 max-w-xl">
-                Giftshop helps leading Shopify merchants drive growth and build loyalty by retaining top customers, and turning them into powerful ambassadors.
+                Giftshop helps stores built on Shopify to increase retention, boost lifetime value, and turn their most loyal customers into advocates.
               </p>
 
               {/* Main CTA - Link to Shopify App */}
