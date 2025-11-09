@@ -54,7 +54,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section - Stripe-inspired with mockups */}
-      <section className="relative pt-16 pb-32 sm:pt-20 sm:pb-40 px-6 lg:px-8 overflow-hidden bg-white">
+      <section className="relative pt-16 pb-16 sm:pt-20 sm:pb-20 px-6 lg:px-8 overflow-hidden bg-white">
         {/* Subtle Background Gradient - Stripe style */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-white to-white"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(251,113,133,0.05),transparent_70%)]"></div>
@@ -128,9 +128,9 @@ export default function Home() {
             </div>
 
             {/* Right Column - UI Mockups */}
-            <div className="relative hidden lg:block h-[700px] min-h-[700px]">
+            <div className="relative hidden lg:block h-[750px] min-h-[750px]">
               {/* Mockup 1: Campaign Dashboard (Top) */}
-              <div className="absolute top-8 right-0 w-80 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-2deg] z-20">
+              <div className="absolute top-0 right-0 w-96 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-2deg] z-20">
                 <div className="p-4 border-b border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -169,7 +169,7 @@ export default function Home() {
               </div>
 
               {/* Mockup 2: Gift Selection Interface (Middle) */}
-              <div className="absolute top-48 right-8 w-96 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[1deg] z-10">
+              <div className="absolute top-56 right-12 w-[420px] rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[1deg] z-10">
                 <div className="p-5 border-b border-gray-100">
                   <h3 className="text-base font-bold text-gray-900">Select Gift</h3>
                   <p className="text-xs text-gray-500 mt-1">Choose a product to send</p>
@@ -211,7 +211,7 @@ export default function Home() {
               </div>
 
               {/* Mockup 3: Analytics Chart (Bottom) */}
-              <div className="absolute top-96 right-0 w-72 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-1deg] z-0">
+              <div className="absolute top-[420px] right-0 w-80 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-1deg] z-0">
                 <div className="p-4 border-b border-gray-100">
                   <div className="flex items-center justify-between">
                     <span className="text-sm font-semibold text-gray-900">Campaign Performance</span>
@@ -253,7 +253,7 @@ export default function Home() {
       </section>
 
       {/* Trusted Brands Section - Asymmetric Layout */}
-      <section className="relative py-20 px-6 lg:px-8 overflow-hidden bg-white">
+      <section className="relative pt-12 pb-20 px-6 lg:px-8 overflow-hidden bg-white">
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_1px_1px,rgb(0,0,0)_1px,transparent_0)] [background-size:24px_24px]"></div>
