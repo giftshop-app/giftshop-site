@@ -167,7 +167,7 @@ export default function Home() {
               </div>
 
               {/* Mockup 2: Campaign Dashboard (Bottom - Nested) */}
-              <div className="absolute top-[320px] right-0 w-96 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-2deg] z-10">
+              <div className="absolute top-[350px] right-0 w-96 rounded-xl bg-white shadow-2xl border border-gray-200/50 overflow-hidden transform rotate-[-2deg] z-10">
                 <div className="p-4 border-b border-gray-100">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
