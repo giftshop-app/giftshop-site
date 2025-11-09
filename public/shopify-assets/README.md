@@ -1,37 +1,31 @@
 # Shopify Brand Assets
 
-This folder contains official Shopify brand assets downloaded from [Shopify Brand Assets](https://www.shopify.com/uk/brand-assets).
+This folder contains official Shopify brand assets for use on the Giftshop homepage.
 
-## How to Download Assets
-
-**📋 See `DOWNLOAD_INSTRUCTIONS.md` for detailed step-by-step instructions.**
-
-Quick steps:
-1. Visit https://www.shopify.com/uk/brand-assets
-2. Click "Download all brand assets" at the top of the page
-3. Extract the downloaded ZIP file
-4. Follow the organization guide in `DOWNLOAD_INSTRUCTIONS.md` to copy files to the correct folders
-5. Add all files to git: `git add public/shopify-assets/ && git commit -m "Add Shopify brand assets"`
-
-## Recommended Folder Structure
+## Folder Structure
 
 ```
 shopify-assets/
 ├── logos/
-│   ├── primary/
+│   ├── primary/          # Full-color logos (light & dark backgrounds)
 │   │   ├── shopify-logo-full-color.svg
 │   │   ├── shopify-logo-full-color.png
-│   │   └── shopify-logo-inverted.svg (white wordmark)
-│   ├── monotone/
+│   │   ├── shopify-logo-inverted.svg
+│   │   └── shopify-logo-inverted.png
+│   ├── monotone/         # Black & white logos
 │   │   ├── shopify-logo-black.svg
-│   │   └── shopify-logo-white.svg
-│   └── wordmark/
-│       ├── shopify-wordmark.svg
-│       └── shopify-wordmark-inverted.svg
-├── brandmark/
-│   ├── shopify_glyph.svg (The Shopping Bag)
-│   └── shopify_glyph.png
-└── README.md (this file)
+│   │   ├── shopify-logo-black.png
+│   │   ├── shopify-logo-white.svg
+│   │   └── shopify-logo-white.png
+│   └── wordmark/         # Wordmark-only logos (empty - reserved for future use)
+├── brandmark/            # The Shopping Bag (glyph)
+│   ├── shopify_glyph.svg
+│   ├── shopify_glyph.png
+│   ├── shopify_glyph_black.svg
+│   ├── shopify_glyph_black.png
+│   ├── shopify_glyph_white.svg
+│   └── shopify_glyph_white.png
+└── README.md
 ```
 
 ## Usage in Next.js
@@ -39,21 +33,39 @@ shopify-assets/
 ### In React Components
 
 ```tsx
-// Using SVG
-<img src="/shopify-assets/brandmark/shopify_glyph.svg" alt="Shopify" />
+// Primary logo (full color)
+<img src="/shopify-assets/logos/primary/shopify-logo-full-color.svg" alt="Shopify" />
 
-// Or inline SVG for better control
-<svg>...</svg>
+// Inverted logo (for dark backgrounds)
+<img src="/shopify-assets/logos/primary/shopify-logo-inverted.svg" alt="Shopify" />
 
-// Using PNG
-<img src="/shopify-assets/logos/primary/shopify-logo-full-color.png" alt="Shopify" />
+// Monotone black logo
+<img src="/shopify-assets/logos/monotone/shopify-logo-black.svg" alt="Shopify" />
+
+// Monotone white logo
+<img src="/shopify-assets/logos/monotone/shopify-logo-white.svg" alt="Shopify" />
+
+// The Shopping Bag (glyph) - currently used in hero banner
+<img src="/shopify-assets/brandmark/shopify_glyph.png" alt="Shopify" />
 ```
 
-### In CSS/HTML
+### Using Next.js Image Component
 
-```css
-background-image: url('/shopify-assets/brandmark/shopify_glyph.svg');
+```tsx
+import Image from "next/image";
+
+<Image 
+  src="/shopify-assets/brandmark/shopify_glyph.png" 
+  alt="Shopify" 
+  width={20}
+  height={20}
+  priority
+/>
 ```
+
+## Current Usage
+
+- **Hero Banner:** `/shopify-assets/brandmark/shopify_glyph.png` is used in the "Now available for all Shopify stores" banner on the homepage.
 
 ## Shopify Brand Guidelines
 
@@ -72,20 +84,19 @@ background-image: url('/shopify-assets/brandmark/shopify_glyph.svg');
 - **Digital:** 80px width minimum
 - **Print:** 28mm width minimum
 
-## Current Assets
+## Asset Details
 
-- `shopify_glyph.svg` - The Shopping Bag brandmark (SVG version)
-- `shopify_glyph.png` - The Shopping Bag brandmark (PNG version) - **REQUIRED: Download from Shopify brand assets**
+### Primary Logos
+- **Full Color (white background):** Standard logo for light backgrounds
+- **Inverted (dark background):** White wordmark version for dark backgrounds
 
-## Important: Download PNG Version
+### Monotone Logos
+- **Black:** Single-color black logo for light backgrounds
+- **White:** Single-color white logo for dark backgrounds
 
-The website currently uses `shopify_glyph.png` in the hero banner. To get the official PNG:
+### Brandmark (The Shopping Bag)
+- **Full Color:** Standard green shopping bag icon
+- **Black:** Black version for light backgrounds
+- **White:** White version for dark backgrounds
 
-1. Visit https://www.shopify.com/uk/brand-assets
-2. Click "Download all brand assets"
-3. In the extracted ZIP, look for "The Shopping Bag" folder
-4. Find the PNG version of the glyph (usually named something like `shopify-glyph.png` or `shopping-bag.png`)
-5. Copy it to this folder as `shopify_glyph.png`
-
-Alternatively, you can download just "The Shopping Bag" assets from the brand assets page.
-
+All assets are available in both SVG (scalable) and PNG (raster) formats.
