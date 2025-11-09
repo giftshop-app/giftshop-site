@@ -395,66 +395,38 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right Column - Animated Visual */}
+            {/* Right Column - Simple Animated Visual */}
             <div className="relative h-[600px] lg:h-[700px]">
-              {/* Background Grid */}
+              {/* Simple Background */}
               <div className="absolute inset-0 opacity-[0.02] z-0">
                 <div className="absolute inset-0 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
               </div>
 
-              {/* SVG Container for connection lines */}
+              {/* Simple Connection Lines */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 1000 700" preserveAspectRatio="none">
                 <defs>
-                  <linearGradient id="gradient-gift-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.5" />
+                  <linearGradient id="gift-line" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.3" />
                     <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.1" />
                   </linearGradient>
-                  <linearGradient id="gradient-gift-2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.5" />
-                    <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.1" />
-                  </linearGradient>
-                  <linearGradient id="gradient-gift-3" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.5" />
-                    <stop offset="100%" stopColor="#f43f5e" stopOpacity="0.1" />
-                  </linearGradient>
-                  <linearGradient id="gradient-discount-1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
-                  </linearGradient>
-                  <linearGradient id="gradient-discount-2" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
-                  </linearGradient>
-                  <linearGradient id="gradient-discount-3" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
-                  </linearGradient>
-                  <linearGradient id="gradient-discount-4" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
-                  </linearGradient>
-                  <linearGradient id="gradient-discount-5" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
-                  </linearGradient>
-                  <linearGradient id="gradient-discount-6" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.4" />
+                  <linearGradient id="discount-line" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.3" />
                     <stop offset="100%" stopColor="#10b981" stopOpacity="0.1" />
                   </linearGradient>
                 </defs>
                 
-                {/* Connection Lines from Brand to Top Customers */}
-                <line x1="500" y1="80" x2="200" y2="315" stroke="url(#gradient-gift-1)" strokeWidth="2" className="opacity-50" />
-                <line x1="500" y1="80" x2="500" y2="350" stroke="url(#gradient-gift-2)" strokeWidth="2" className="opacity-50" />
-                <line x1="500" y1="80" x2="800" y2="336" stroke="url(#gradient-gift-3)" strokeWidth="2" className="opacity-50" />
+                {/* Lines from Brand to Top Customers */}
+                <line x1="500" y1="80" x2="200" y2="315" stroke="url(#gift-line)" strokeWidth="2" className="opacity-40" />
+                <line x1="500" y1="80" x2="500" y2="350" stroke="url(#gift-line)" strokeWidth="2" className="opacity-40" />
+                <line x1="500" y1="80" x2="800" y2="336" stroke="url(#gift-line)" strokeWidth="2" className="opacity-40" />
                 
-                {/* Connection Lines from Top Customers to Friends */}
-                <line x1="200" y1="315" x2="100" y2="525" stroke="url(#gradient-discount-1)" strokeWidth="1.5" className="opacity-30" />
-                <line x1="200" y1="315" x2="250" y2="546" stroke="url(#gradient-discount-2)" strokeWidth="1.5" className="opacity-30" />
-                <line x1="500" y1="350" x2="400" y2="560" stroke="url(#gradient-discount-3)" strokeWidth="1.5" className="opacity-30" />
-                <line x1="500" y1="350" x2="600" y2="574" stroke="url(#gradient-discount-4)" strokeWidth="1.5" className="opacity-30" />
-                <line x1="800" y1="336" x2="750" y2="553" stroke="url(#gradient-discount-5)" strokeWidth="1.5" className="opacity-30" />
-                <line x1="800" y1="336" x2="900" y2="532" stroke="url(#gradient-discount-6)" strokeWidth="1.5" className="opacity-30" />
+                {/* Lines from Top Customers to Friends */}
+                <line x1="200" y1="315" x2="100" y2="525" stroke="url(#discount-line)" strokeWidth="1.5" className="opacity-25" />
+                <line x1="200" y1="315" x2="250" y2="546" stroke="url(#discount-line)" strokeWidth="1.5" className="opacity-25" />
+                <line x1="500" y1="350" x2="400" y2="560" stroke="url(#discount-line)" strokeWidth="1.5" className="opacity-25" />
+                <line x1="500" y1="350" x2="600" y2="574" stroke="url(#discount-line)" strokeWidth="1.5" className="opacity-25" />
+                <line x1="800" y1="336" x2="750" y2="553" stroke="url(#discount-line)" strokeWidth="1.5" className="opacity-25" />
+                <line x1="800" y1="336" x2="900" y2="532" stroke="url(#discount-line)" strokeWidth="1.5" className="opacity-25" />
               </svg>
 
               {/* Brand Card */}
@@ -467,7 +439,7 @@ export default function Home() {
                 <span className="text-[10px] font-semibold text-gray-900">Brand</span>
               </div>
 
-              {/* Many Users (Grayed Out) - Cleaner positioning */}
+              {/* Many Users (Grayed Out) */}
               <div className="absolute top-48 left-0 right-0 z-10">
                 {[
                   { left: '8%', top: '5%' }, { left: '18%', top: '12%' }, { left: '28%', top: '8%' },
@@ -487,36 +459,18 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Animated Gift Icons - One at a time from Brand to Top Customers */}
+              {/* Single Animated Gift Icon - Simple flow */}
               <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-25">
-                <div className={`animate-flow-gift-left`} style={{ animationDelay: '0s' }}>
-                  <div className="h-6 w-6 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
-                    <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-25">
-                <div className={`animate-flow-gift-center`} style={{ animationDelay: '1s' }}>
-                  <div className="h-6 w-6 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
-                    <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-25">
-                <div className={`animate-flow-gift-right`} style={{ animationDelay: '2s' }}>
-                  <div className="h-6 w-6 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
-                    <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="animate-simple-gift">
+                  <div className="h-8 w-8 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
+                    <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                     </svg>
                   </div>
                 </div>
               </div>
 
-              {/* Top Customers (Highlighted) */}
+              {/* Top Customers */}
               {[
                 { left: '20%', top: '45%' },
                 { left: '50%', top: '50%' },
@@ -534,30 +488,16 @@ export default function Home() {
                 </div>
               ))}
 
-              {/* Animated Discount Icons - One from each Top Customer to Friends */}
-              <div className="absolute top-[45%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className={`animate-flow-discount-1`} style={{ animationDelay: '3.5s' }}>
-                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
-                    <span className="text-[8px] font-bold text-white">%</span>
-                  </div>
-                </div>
-              </div>
+              {/* Single Animated Discount Icon - Simple flow */}
               <div className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className={`animate-flow-discount-2`} style={{ animationDelay: '4.5s' }}>
-                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
-                    <span className="text-[8px] font-bold text-white">%</span>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute top-[48%] left-[80%] transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className={`animate-flow-discount-3`} style={{ animationDelay: '5.5s' }}>
-                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
-                    <span className="text-[8px] font-bold text-white">%</span>
+                <div className="animate-simple-discount" style={{ animationDelay: '2s' }}>
+                  <div className="h-6 w-6 rounded-full bg-green-500 flex items-center justify-center shadow-md">
+                    <span className="text-[9px] font-bold text-white">%</span>
                   </div>
                 </div>
               </div>
 
-              {/* Friends & Family Cards */}
+              {/* Friends Cards */}
               {[
                 { left: '10%', top: '75%' },
                 { left: '25%', top: '78%' },
@@ -567,7 +507,7 @@ export default function Home() {
                 { left: '90%', top: '76%' }
               ].map((pos, i) => (
                 <div key={`friend-${i}`} className="absolute z-10" style={{ left: pos.left, top: pos.top, transform: 'translate(-50%, -50%)' }}>
-                  <div className="w-20 h-20 rounded-xl bg-white border border-gray-200 shadow-md flex flex-col items-center justify-center opacity-0 animate-fade-in-delay" style={{ animationDelay: `${2 + i * 0.15}s` }}>
+                  <div className="w-20 h-20 rounded-xl bg-white border border-gray-200 shadow-md flex flex-col items-center justify-center">
                     <svg className="h-5 w-5 text-gray-500 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
