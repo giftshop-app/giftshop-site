@@ -87,21 +87,39 @@ export default function Home() {
                 Giftshop helps leading Shopify merchants drive growth and build loyalty by retaining top customers, and turning them into powerful ambassadors.
               </p>
 
-              {/* CTA Input - Stripe style */}
-              <div className="mt-8 flex items-center gap-3 max-w-md">
-                <div className="flex-1 rounded-lg border border-gray-300 bg-white px-4 py-3.5 shadow-sm focus-within:border-gray-400 focus-within:ring-1 focus-within:ring-gray-400">
-                  <input
-                    type="email"
-                    placeholder="Email address"
-                    className="w-full text-base text-gray-900 placeholder-gray-400 outline-none"
-                  />
-                </div>
-                <button className="group flex items-center gap-2 rounded-lg bg-gray-900 px-6 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all whitespace-nowrap">
-                  Start now
+              {/* Main CTA - Link to Shopify App */}
+              <div className="mt-8">
+                <a
+                  href="https://apps.shopify.com/giftshop"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-lg bg-gray-900 px-8 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all"
+                >
+                  Get started for free
                   <svg className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </button>
+                </a>
+              </div>
+
+              {/* Secondary CTA - Newsletter Signup */}
+              <div className="mt-4">
+                <div className="flex items-center gap-2 text-sm text-gray-500 mb-2">
+                  <span>or</span>
+                  <span>sign up to our newsletter</span>
+                </div>
+                <div className="flex items-center gap-2 max-w-xs">
+                  <div className="flex-1 rounded-lg border border-gray-300 bg-white px-3 py-2 shadow-sm focus-within:border-gray-400 focus-within:ring-1 focus-within:ring-gray-400">
+                    <input
+                      type="email"
+                      placeholder="Email address"
+                      className="w-full text-sm text-gray-900 placeholder-gray-400 outline-none"
+                    />
+                  </div>
+                  <button className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all whitespace-nowrap">
+                    Subscribe
+                  </button>
+                </div>
               </div>
 
               {/* Feature Points - Minimal Stripe style */}
