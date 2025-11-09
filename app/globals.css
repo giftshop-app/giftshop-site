@@ -94,7 +94,7 @@ body {
 
 @keyframes flow-gift {
   0% {
-    transform: translate(0, 0);
+    transform: translate(-50%, -50%) translate(0, 0);
     opacity: 0;
   }
   10% {
@@ -104,14 +104,14 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translate(var(--flow-x, 0), var(--flow-y, 200px));
+    transform: translate(-50%, -50%) translate(var(--flow-x, 0), var(--flow-y, 200px));
     opacity: 0;
   }
 }
 
 @keyframes flow-discount {
   0% {
-    transform: translate(0, 0);
+    transform: translate(-50%, -50%) translate(0, 0);
     opacity: 0;
   }
   10% {
@@ -121,7 +121,7 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translate(var(--flow-x, 0), var(--flow-y, 150px));
+    transform: translate(-50%, -50%) translate(var(--flow-x, 0), var(--flow-y, 150px));
     opacity: 0;
   }
 }

@@ -397,8 +397,8 @@ export default function Home() {
 
             {/* Right Column - Animated Visual */}
             <div className="relative h-[600px] lg:h-[700px]">
-              {/* SVG Container for all connections */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" style={{ overflow: 'visible' }}>
+              {/* SVG Container for connection lines only */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 1000 700" preserveAspectRatio="none">
                 <defs>
                   <linearGradient id="gradient-gift" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#f43f5e" stopOpacity="0.6" />
@@ -410,47 +410,70 @@ export default function Home() {
                   </linearGradient>
                 </defs>
                 
-                {/* Connection Lines from Brand to Top Customers */}
-                <line x1="50%" y1="8%" x2="20%" y2="45%" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
-                <line x1="50%" y1="8%" x2="50%" y2="50%" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
-                <line x1="50%" y1="8%" x2="80%" y2="48%" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
-                
-                {/* Animated Gift Icons */}
-                <g className="animate-flow-gift" style={{ animationDelay: '0s' }}>
-                  <circle cx="50%" cy="20%" r="8" fill="#f43f5e" className="animate-pulse" />
-                  <svg x="calc(50% - 8px)" y="calc(20% - 8px)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                    <path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                  </svg>
-                </g>
-                <g className="animate-flow-gift" style={{ animationDelay: '0.3s' }}>
-                  <circle cx="50%" cy="20%" r="8" fill="#f43f5e" className="animate-pulse" />
-                  <svg x="calc(50% - 8px)" y="calc(20% - 8px)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                    <path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                  </svg>
-                </g>
-                <g className="animate-flow-gift" style={{ animationDelay: '0.6s' }}>
-                  <circle cx="50%" cy="20%" r="8" fill="#f43f5e" className="animate-pulse" />
-                  <svg x="calc(50% - 8px)" y="calc(20% - 8px)" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                    <path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                  </svg>
-                </g>
+                {/* Connection Lines from Brand (500, 56) to Top Customers */}
+                <line x1="500" y1="56" x2="200" y2="315" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
+                <line x1="500" y1="56" x2="500" y2="350" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
+                <line x1="500" y1="56" x2="800" y2="336" stroke="url(#gradient-gift)" strokeWidth="2" className="opacity-60" />
                 
                 {/* Connection Lines from Top Customers to Friends */}
-                <line x1="20%" y1="45%" x2="10%" y2="75%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
-                <line x1="20%" y1="45%" x2="25%" y2="78%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
-                <line x1="50%" y1="50%" x2="40%" y2="80%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
-                <line x1="50%" y1="50%" x2="60%" y2="82%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
-                <line x1="80%" y1="48%" x2="75%" y2="79%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
-                <line x1="80%" y1="48%" x2="90%" y2="76%" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
-                
-                {/* Animated Discount Icons */}
-                {[0, 0.2, 0.4, 0.6, 0.8, 1.0].map((delay, i) => (
-                  <g key={`discount-${i}`} className="animate-flow-discount" style={{ animationDelay: `${1.5 + delay}s` }}>
-                    <circle cx={i < 2 ? '15%' : i < 4 ? '50%' : '85%'} cy="60%" r="6" fill="#10b981" className="animate-pulse" />
-                    <text x={i < 2 ? '15%' : i < 4 ? '50%' : '85%'} y="calc(60% + 2px)" textAnchor="middle" className="text-[8px] font-bold fill-white">%</text>
-                  </g>
-                ))}
+                <line x1="200" y1="315" x2="100" y2="525" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                <line x1="200" y1="315" x2="250" y2="546" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                <line x1="500" y1="350" x2="400" y2="560" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                <line x1="500" y1="350" x2="600" y2="574" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                <line x1="800" y1="336" x2="750" y2="553" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
+                <line x1="800" y1="336" x2="900" y2="532" stroke="url(#gradient-discount)" strokeWidth="1.5" className="opacity-40" />
               </svg>
+              
+              {/* Animated Gift Icons - Using CSS divs */}
+              {[
+                { left: '50%', top: '8%', flowX: '-30%', flowY: '37%' },
+                { left: '50%', top: '8%', flowX: '0%', flowY: '42%' },
+                { left: '50%', top: '8%', flowX: '30%', flowY: '40%' }
+              ].map((path, i) => (
+                <div
+                  key={`gift-${i}`}
+                  className="absolute animate-flow-gift z-20"
+                  style={{
+                    left: path.left,
+                    top: path.top,
+                    animationDelay: `${i * 0.3}s`,
+                    '--flow-x': path.flowX,
+                    '--flow-y': path.flowY
+                  } as React.CSSProperties}
+                >
+                  <div className="h-4 w-4 rounded-full bg-rose-500 flex items-center justify-center animate-pulse">
+                    <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
+                    </svg>
+                  </div>
+                </div>
+              ))}
+              
+              {/* Animated Discount Icons - Using CSS divs */}
+              {[
+                { left: '20%', top: '45%', flowX: '-10%', flowY: '30%' },
+                { left: '20%', top: '45%', flowX: '5%', flowY: '33%' },
+                { left: '50%', top: '50%', flowX: '-10%', flowY: '30%' },
+                { left: '50%', top: '50%', flowX: '10%', flowY: '32%' },
+                { left: '80%', top: '48%', flowX: '-5%', flowY: '31%' },
+                { left: '80%', top: '48%', flowX: '10%', flowY: '28%' }
+              ].map((path, i) => (
+                <div
+                  key={`discount-${i}`}
+                  className="absolute animate-flow-discount z-20"
+                  style={{
+                    left: path.left,
+                    top: path.top,
+                    animationDelay: `${1.5 + i * 0.2}s`,
+                    '--flow-x': path.flowX,
+                    '--flow-y': path.flowY
+                  } as React.CSSProperties}
+                >
+                  <div className="h-3 w-3 rounded-full bg-green-500 flex items-center justify-center animate-pulse">
+                    <span className="text-[6px] font-bold text-white">%</span>
+                  </div>
+                </div>
+              ))}
 
               {/* Background Grid */}
               <div className="absolute inset-0 opacity-[0.03] z-0">
