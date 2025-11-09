@@ -72,7 +72,14 @@ export default function Home() {
               {/* Banner - Minimal Stripe style */}
               <div className="mb-4">
                 <div className="inline-flex items-center gap-2.5 rounded-full bg-gray-100 px-4 py-2 border border-gray-200/50">
-                  <img src="/shopify-assets/shopify_glyph.svg" alt="Shopify" className="h-4 w-4 flex-shrink-0" />
+                  <svg width="16" height="16" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                    <path d="M15.5 4.5L14.5 8.5L10.5 7.5L11.5 3.5L15.5 4.5Z" fill="#95BF47"/>
+                    <path d="M10.5 7.5L14.5 8.5L13.5 12.5L9.5 11.5L10.5 7.5Z" fill="#5E8E3E"/>
+                    <path d="M9.5 11.5L13.5 12.5L12.5 16.5L8.5 15.5L9.5 11.5Z" fill="#95BF47"/>
+                    <path d="M8.5 15.5L12.5 16.5L11.5 20.5L7.5 19.5L8.5 15.5Z" fill="#5E8E3E"/>
+                    <path d="M11.5 3.5L10.5 7.5L6.5 6.5L7.5 2.5L11.5 3.5Z" fill="#5E8E3E"/>
+                    <path d="M7.5 2.5L6.5 6.5L2.5 5.5L3.5 1.5L7.5 2.5Z" fill="#95BF47"/>
+                  </svg>
                   <span className="text-xs font-medium uppercase tracking-wider text-gray-600">Now available for all Shopify stores</span>
                 </div>
               </div>
