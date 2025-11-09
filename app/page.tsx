@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Home() {
   const words = ["grow", "scale", "retain", "delight", "engage", "convert"];
@@ -72,12 +73,13 @@ export default function Home() {
               {/* Banner - Minimal Stripe style */}
               <div className="mb-4">
                 <div className="inline-flex items-center gap-3 rounded-full bg-gray-100 px-5 py-2.5 border border-gray-200/50">
-                  <img 
-                    src="/shopify-assets/shopify_glyph.svg" 
+                  <Image 
+                    src="/shopify-assets/shopify_glyph.png" 
                     alt="Shopify" 
-                    className="h-5 w-5 flex-shrink-0"
-                    width="20"
-                    height="20"
+                    width={20}
+                    height={20}
+                    className="h-5 w-5 flex-shrink-0 object-contain"
+                    priority
                   />
                   <span className="text-sm font-medium uppercase tracking-wider text-gray-700">Now available for all Shopify stores</span>
                 </div>

@@ -70,5 +70,18 @@ background-image: url('/shopify-assets/brandmark/shopify_glyph.svg');
 
 ## Current Assets
 
-- `shopify_glyph.svg` - The Shopping Bag brandmark (currently in use in hero banner)
+- `shopify_glyph.svg` - The Shopping Bag brandmark (SVG version)
+- `shopify_glyph.png` - The Shopping Bag brandmark (PNG version) - **REQUIRED: Download from Shopify brand assets**
+
+## Important: Download PNG Version
+
+The website currently uses `shopify_glyph.png` in the hero banner. To get the official PNG:
+
+1. Visit https://www.shopify.com/uk/brand-assets
+2. Click "Download all brand assets"
+3. In the extracted ZIP, look for "The Shopping Bag" folder
+4. Find the PNG version of the glyph (usually named something like `shopify-glyph.png` or `shopping-bag.png`)
+5. Copy it to this folder as `shopify_glyph.png`
+
+Alternatively, you can download just "The Shopping Bag" assets from the brand assets page.
 
