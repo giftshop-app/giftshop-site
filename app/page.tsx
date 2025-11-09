@@ -487,29 +487,29 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Animated Gift Icons - Starting from Brand */}
+              {/* Animated Gift Icons - One at a time from Brand to Top Customers */}
               <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-25">
                 <div className={`animate-flow-gift-left`} style={{ animationDelay: '0s' }}>
-                  <div className="h-5 w-5 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
-                    <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="h-6 w-6 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
+                    <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                     </svg>
                   </div>
                 </div>
               </div>
               <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-25">
-                <div className={`animate-flow-gift-center`} style={{ animationDelay: '0.4s' }}>
-                  <div className="h-5 w-5 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
-                    <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className={`animate-flow-gift-center`} style={{ animationDelay: '1s' }}>
+                  <div className="h-6 w-6 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
+                    <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                     </svg>
                   </div>
                 </div>
               </div>
               <div className="absolute top-12 left-1/2 transform -translate-x-1/2 z-25">
-                <div className={`animate-flow-gift-right`} style={{ animationDelay: '0.8s' }}>
-                  <div className="h-5 w-5 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
-                    <svg className="h-3 w-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className={`animate-flow-gift-right`} style={{ animationDelay: '2s' }}>
+                  <div className="h-6 w-6 rounded-full bg-rose-500 flex items-center justify-center shadow-lg">
+                    <svg className="h-4 w-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
                     </svg>
                   </div>
@@ -534,25 +534,25 @@ export default function Home() {
                 </div>
               ))}
 
-              {/* Animated Discount Icons - Starting from Top Customers */}
+              {/* Animated Discount Icons - One from each Top Customer to Friends */}
               <div className="absolute top-[45%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className={`animate-flow-discount-1`} style={{ animationDelay: '2s' }}>
-                  <div className="h-4 w-4 rounded-full bg-green-500 flex items-center justify-center shadow-md">
-                    <span className="text-[7px] font-bold text-white">%</span>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute top-[45%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className={`animate-flow-discount-2`} style={{ animationDelay: '2.2s' }}>
-                  <div className="h-4 w-4 rounded-full bg-green-500 flex items-center justify-center shadow-md">
-                    <span className="text-[7px] font-bold text-white">%</span>
+                <div className={`animate-flow-discount-1`} style={{ animationDelay: '3.5s' }}>
+                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
+                    <span className="text-[8px] font-bold text-white">%</span>
                   </div>
                 </div>
               </div>
               <div className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className={`animate-flow-discount-3`} style={{ animationDelay: '2.4s' }}>
-                  <div className="h-4 w-4 rounded-full bg-green-500 flex items-center justify-center shadow-md">
-                    <span className="text-[7px] font-bold text-white">%</span>
+                <div className={`animate-flow-discount-2`} style={{ animationDelay: '4.5s' }}>
+                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
+                    <span className="text-[8px] font-bold text-white">%</span>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-[48%] left-[80%] transform -translate-x-1/2 -translate-y-1/2 z-25">
+                <div className={`animate-flow-discount-3`} style={{ animationDelay: '5.5s' }}>
+                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
+                    <span className="text-[8px] font-bold text-white">%</span>
                   </div>
                 </div>
               </div>
