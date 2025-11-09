@@ -5,7 +5,6 @@ import { useState, useEffect, useRef } from "react";
 export default function Home() {
   const words = ["grow", "scale", "retain", "delight", "engage", "convert"];
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [scrollY, setScrollY] = useState(0);
   const [isBrandsVisible, setIsBrandsVisible] = useState(false);
   const brandsSectionRef = useRef<HTMLDivElement>(null);
 
@@ -16,15 +15,6 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [words.length]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -321,16 +311,6 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* Scroll Indicator */}
-          <div className={`mt-16 text-center transition-all duration-1000 delay-500 ${isBrandsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-            <div className="inline-flex flex-col items-center gap-2 text-gray-400 animate-bounce">
-              <span className="text-sm font-medium">Scroll to explore more</span>
-              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
             </div>
           </div>
         </div>
@@ -787,22 +767,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* Scroll Indicator - Fixed at bottom of viewport */}
-      <div
-        className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-40 transition-opacity duration-300"
-        style={{
-          opacity: Math.max(0, 1 - scrollY / 200),
-          pointerEvents: scrollY > 200 ? "none" : "auto",
-        }}
-      >
-        <div className="flex flex-col items-center gap-2 text-gray-600 animate-bounce">
-          <span className="text-sm font-semibold">Scroll to explore</span>
-          <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </div>
-      </div>
 
       {/* Help Button (Bottom Right) */}
       <button className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-2xl bg-gray-900 text-white shadow-2xl hover:bg-gray-800 hover:scale-110 transition-all">
