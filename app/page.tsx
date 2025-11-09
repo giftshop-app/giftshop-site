@@ -247,7 +247,7 @@ export default function Home() {
               <div className="h-px w-16 bg-gradient-to-l from-transparent via-rose-400 to-rose-300"></div>
             </div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Join thousands of merchants growing their business with Giftshop
+              Join our amazing merchants growing their business with Giftshop
             </p>
           </div>
 
