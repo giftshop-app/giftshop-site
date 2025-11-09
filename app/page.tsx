@@ -54,7 +54,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section - Stripe-inspired with mockups */}
-      <section className="relative py-24 sm:py-32 px-6 lg:px-8 overflow-hidden bg-white">
+      <section className="relative pt-12 pb-20 sm:pt-16 sm:pb-24 px-6 lg:px-8 overflow-hidden bg-white">
         {/* Subtle Background Gradient - Stripe style */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 via-white to-white"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(251,113,133,0.05),transparent_70%)]"></div>
@@ -70,7 +70,7 @@ export default function Home() {
             {/* Left Column - Text Content */}
             <div>
               {/* Banner - Minimal Stripe style */}
-              <div className="mb-6">
+              <div className="mb-4">
                 <div className="inline-flex items-center gap-2 rounded-full bg-gray-100 px-4 py-1.5 border border-gray-200/50">
                   <span className="text-xs font-semibold uppercase tracking-wider text-gray-600">Now available for all Shopify stores</span>
                 </div>
