@@ -350,9 +350,6 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Column - Text Content */}
             <div>
-              <div className="mb-4">
-                <span className="text-sm font-semibold uppercase tracking-wider text-purple-600">Gift Flow</span>
-              </div>
               <h2 className="text-5xl font-bold leading-[1.05] tracking-[-0.02em] text-gray-900 sm:text-6xl lg:text-7xl mb-6">
                 Turn top customers into{" "}
                 <span className="text-rose-600">powerful advocates</span>
@@ -480,22 +477,48 @@ export default function Home() {
               </div>
 
               {/* Animated Discount Icons - From Top Customers to Friends */}
+              {/* Left Top Customer -> Friends 1 & 2 */}
               <div className="absolute top-[45%] left-[calc(50%-112px)] transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className="animate-discount-to-friends-1" style={{ animationDelay: '2.5s' }}>
+                <div className="animate-discount-to-friends-left-1" style={{ animationDelay: '2.5s' }}>
+                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
+                    <span className="text-[8px] font-bold text-white">%</span>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute top-[45%] left-[calc(50%-112px)] transform -translate-x-1/2 -translate-y-1/2 z-25">
+                <div className="animate-discount-to-friends-left-2" style={{ animationDelay: '2.8s' }}>
+                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
+                    <span className="text-[8px] font-bold text-white">%</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Center Top Customer -> Friends 3 & 4 */}
+              <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-25">
+                <div className="animate-discount-to-friends-center-1" style={{ animationDelay: '3.1s' }}>
                   <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
                     <span className="text-[8px] font-bold text-white">%</span>
                   </div>
                 </div>
               </div>
               <div className="absolute top-[45%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className="animate-discount-to-friends-2" style={{ animationDelay: '3s' }}>
+                <div className="animate-discount-to-friends-center-2" style={{ animationDelay: '3.4s' }}>
+                  <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
+                    <span className="text-[8px] font-bold text-white">%</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Right Top Customer -> Friends 5 & 6 */}
+              <div className="absolute top-[45%] left-[calc(50%+112px)] transform -translate-x-1/2 -translate-y-1/2 z-25">
+                <div className="animate-discount-to-friends-right-1" style={{ animationDelay: '3.7s' }}>
                   <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
                     <span className="text-[8px] font-bold text-white">%</span>
                   </div>
                 </div>
               </div>
               <div className="absolute top-[45%] left-[calc(50%+112px)] transform -translate-x-1/2 -translate-y-1/2 z-25">
-                <div className="animate-discount-to-friends-3" style={{ animationDelay: '3.5s' }}>
+                <div className="animate-discount-to-friends-right-2" style={{ animationDelay: '4s' }}>
                   <div className="h-5 w-5 rounded-full bg-green-500 flex items-center justify-center shadow-md">
                     <span className="text-[8px] font-bold text-white">%</span>
                   </div>

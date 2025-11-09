@@ -143,7 +143,8 @@ body {
   }
 }
 
-@keyframes discount-to-friends-1 {
+/* Left Top Customer -> Friends 1 & 2 */
+@keyframes discount-to-friends-left-1 {
   0% {
     transform: translate(-50%, -50%) translate(0, 0);
     opacity: 0;
@@ -155,12 +156,12 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translate(-50%, -50%) translate(-150px, 225px);
+    transform: translate(-50%, -50%) translate(-200px, 225px);
     opacity: 0;
   }
 }
 
-@keyframes discount-to-friends-2 {
+@keyframes discount-to-friends-left-2 {
   0% {
     transform: translate(-50%, -50%) translate(0, 0);
     opacity: 0;
@@ -172,12 +173,13 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translate(-50%, -50%) translate(0, 225px);
+    transform: translate(-50%, -50%) translate(-120px, 225px);
     opacity: 0;
   }
 }
 
-@keyframes discount-to-friends-3 {
+/* Center Top Customer -> Friends 3 & 4 */
+@keyframes discount-to-friends-center-1 {
   0% {
     transform: translate(-50%, -50%) translate(0, 0);
     opacity: 0;
@@ -189,7 +191,59 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translate(-50%, -50%) translate(150px, 225px);
+    transform: translate(-50%, -50%) translate(-60px, 225px);
+    opacity: 0;
+  }
+}
+
+@keyframes discount-to-friends-center-2 {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(60px, 225px);
+    opacity: 0;
+  }
+}
+
+/* Right Top Customer -> Friends 5 & 6 */
+@keyframes discount-to-friends-right-1 {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(120px, 225px);
+    opacity: 0;
+  }
+}
+
+@keyframes discount-to-friends-right-2 {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(200px, 225px);
     opacity: 0;
   }
 }
@@ -221,16 +275,28 @@ body {
   animation: gift-to-customer-3 2.5s ease-in-out infinite;
 }
 
-.animate-discount-to-friends-1 {
-  animation: discount-to-friends-1 2s ease-in-out infinite;
+.animate-discount-to-friends-left-1 {
+  animation: discount-to-friends-left-1 2s ease-in-out infinite;
 }
 
-.animate-discount-to-friends-2 {
-  animation: discount-to-friends-2 2s ease-in-out infinite;
+.animate-discount-to-friends-left-2 {
+  animation: discount-to-friends-left-2 2s ease-in-out infinite;
 }
 
-.animate-discount-to-friends-3 {
-  animation: discount-to-friends-3 2s ease-in-out infinite;
+.animate-discount-to-friends-center-1 {
+  animation: discount-to-friends-center-1 2s ease-in-out infinite;
+}
+
+.animate-discount-to-friends-center-2 {
+  animation: discount-to-friends-center-2 2s ease-in-out infinite;
+}
+
+.animate-discount-to-friends-right-1 {
+  animation: discount-to-friends-right-1 2s ease-in-out infinite;
+}
+
+.animate-discount-to-friends-right-2 {
+  animation: discount-to-friends-right-2 2s ease-in-out infinite;
 }
 
 .animate-fade-in-delay {
