@@ -104,7 +104,7 @@ export default function Home() {
                     width="20"
                     height="20"
                   />
-                  <span className="text-sm font-medium uppercase tracking-wider text-gray-700">Now available for all Shopify stores</span>
+                  <span className="text-sm font-semibold tracking-wide text-gray-700">Now available for all Shopify stores</span>
                 </div>
               </div>
 
