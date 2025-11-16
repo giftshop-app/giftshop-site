@@ -128,7 +128,7 @@ export default function Home() {
 
           {/* Subheadline - Vague and Elusive */}
           <p className="mt-8 text-xl leading-relaxed text-gray-600 max-w-2xl mx-auto opacity-80">
-            A new approach to customer relationships. Coming soon.
+            A new way to enrich and elighten customer relationships. Coming soon.
           </p>
 
         </div>
@@ -251,9 +251,6 @@ export default function Home() {
                 </div>
                 <span className="text-2xl font-bold text-white">Giftshop</span>
               </div>
-              <p className="text-base leading-7 text-gray-400 mb-6">
-                The premier gifting platform for Shopify merchants. Built to drive growth, loyalty, and customer lifetime value.
-              </p>
               
               {/* Newsletter Signup */}
               <div>
