@@ -3,8 +3,16 @@
 import { useState, useEffect } from "react";
 
 export default function Home() {
-  const headerWords = ["something", "different", "better", "new"];
+  const headerWords = ["earn more", "keep more", "sell more", "grow more"];
   const [currentHeaderWordIndex, setCurrentHeaderWordIndex] = useState(0);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    linkedin: "",
+    shopifyStore: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -13,6 +21,55 @@ export default function Home() {
 
     return () => clearInterval(interval);
   }, [headerWords.length]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", linkedin: "", shopifyStore: "" });
+        setTimeout(() => setSubmitStatus("idle"), 5000);
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleGetInTouch = () => {
+    const formSection = document.getElementById("early-access-form");
+    if (formSection) {
+      formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Focus the first input field after a short delay to allow scroll to complete
+      setTimeout(() => {
+        const firstInput = document.getElementById("name");
+        if (firstInput) {
+          firstInput.focus();
+        }
+      }, 500);
+    }
+  };
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
@@ -32,8 +89,11 @@ export default function Home() {
 
             {/* Right side - Buttons */}
             <div className="flex items-center gap-4">
-              <button className="rounded-xl border-2 border-gray-300/50 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all">
-                Learn More
+              <button 
+                onClick={handleGetInTouch}
+                className="rounded-xl border-2 border-gray-300/50 bg-white px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition-all active:scale-95"
+              >
+                Get in touch
               </button>
             </div>
           </div>
@@ -41,7 +101,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section - Secretive and Elusive */}
-      <section className="relative pt-32 pb-32 sm:pt-40 sm:pb-40 px-6 lg:px-8 overflow-hidden bg-white">
+      <section className="relative pt-32 pb-16 sm:pt-40 sm:pb-20 px-6 lg:px-8 overflow-hidden bg-white">
         {/* Subtle Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50/30 via-white to-white"></div>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(251,113,133,0.03),transparent_70%)]"></div>
@@ -55,8 +115,8 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-4xl text-center">
           {/* Main Headline - Mysterious */}
           <h1 className="text-5xl font-bold leading-[1.05] tracking-[-0.02em] text-gray-900 sm:text-6xl lg:text-7xl mb-8">
-            Building{" "}
-            <span className="relative inline-block text-rose-600 min-w-[200px]">
+            Give more.{" "}
+            <span className="relative inline-block text-rose-600 min-w-[180px]">
               <span
                 key={currentHeaderWordIndex}
                 className="inline-block animate-word-fade-in"
@@ -71,14 +131,108 @@ export default function Home() {
             A new approach to customer relationships. Coming soon.
           </p>
 
-          {/* Minimal CTA */}
-          <div className="mt-12">
-            <button className="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-8 py-3.5 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all">
-              Stay Updated
-              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+        </div>
+      </section>
+
+      {/* Form Section */}
+      <section id="early-access-form" className="relative py-16 px-6 lg:px-8 bg-gray-50 scroll-mt-20">
+        <div className="mx-auto max-w-2xl">
+          <div className="rounded-2xl bg-white border border-gray-200 shadow-sm p-8 lg:p-10">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900 mb-3">Get Early Access</h2>
+              <p className="text-base text-gray-600">
+                Join the waitlist to be among the first to experience what we're building.
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                Name <span className="text-rose-600">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
+                placeholder="Your full name"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                Email <span className="text-rose-600">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="linkedin" className="block text-sm font-medium text-gray-700 mb-2">
+                LinkedIn Profile URL <span className="text-gray-400 text-xs">(optional)</span>
+              </label>
+              <input
+                type="url"
+                id="linkedin"
+                name="linkedin"
+                value={formData.linkedin}
+                onChange={handleChange}
+                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
+                placeholder="https://linkedin.com/in/yourprofile"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="shopifyStore" className="block text-sm font-medium text-gray-700 mb-2">
+                Shopify Store URL <span className="text-rose-600">*</span>
+              </label>
+              <input
+                type="url"
+                id="shopifyStore"
+                name="shopifyStore"
+                required
+                value={formData.shopifyStore}
+                onChange={handleChange}
+                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
+                placeholder="https://yourstore.myshopify.com"
+              />
+            </div>
+
+            {submitStatus === "success" && (
+              <div className="rounded-lg bg-green-50 border border-green-200 p-4">
+                <p className="text-sm font-medium text-green-800">
+                  Thank you! We've received your information and will be in touch soon.
+                </p>
+              </div>
+            )}
+
+            {submitStatus === "error" && (
+              <div className="rounded-lg bg-red-50 border border-red-200 p-4">
+                <p className="text-sm font-medium text-red-800">
+                  Something went wrong. Please try again later.
+                </p>
+              </div>
+            )}
+
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="w-full rounded-lg bg-gray-900 px-8 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? "Submitting..." : "Submit"}
             </button>
+          </form>
           </div>
         </div>
       </section>
