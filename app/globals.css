@@ -319,3 +319,53 @@ body {
 .animate-word-fade-in {
   animation: word-fade-in 0.5s ease-out;
 }
+
+/* Google Form Styling - Hide branding and remove scrolling */
+.google-form-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.google-form-iframe {
+  border: none;
+  overflow: hidden;
+  display: block;
+}
+
+/* Hide Google branding elements (limited due to iframe restrictions) */
+.google-form-container iframe {
+  pointer-events: auto;
+}
+
+/* Hide top section of Google Form (title/description) */
+.google-form-hide-top {
+  margin-top: -120px;
+  height: calc(800px + 120px);
+  transform: translateY(120px);
+}
+
+/* Attempt to hide Google footer/branding - may be limited by iframe security */
+.google-form-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: white;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Overlay to hide top section */
+.google-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: white;
+  pointer-events: none;
+  z-index: 1;
+}
