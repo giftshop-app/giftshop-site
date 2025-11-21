@@ -38,8 +38,8 @@ export default function Home() {
 
       if (response.ok) {
         setSubmitStatus("success");
-        setFormData({ name: "", email: "", linkedin: "", shopifyStore: "" });
-        setTimeout(() => setSubmitStatus("idle"), 5000);
+        // Keep formData so we can display it in the confirmation state
+        // Don't clear it or reset the status - it will stay until page reload
       } else {
         setSubmitStatus("error");
       }
@@ -145,94 +145,133 @@ export default function Home() {
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Name <span className="text-rose-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
-                  placeholder="Your full name"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email <span className="text-rose-600">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="linkedin" className="block text-sm font-medium text-gray-700 mb-2">
-                  LinkedIn Profile URL <span className="text-gray-400 text-xs">(optional)</span>
-                </label>
-                <input
-                  type="url"
-                  id="linkedin"
-                  name="linkedin"
-                  value={formData.linkedin}
-                  onChange={handleChange}
-                  className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
-                  placeholder="https://linkedin.com/in/yourprofile"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="shopifyStore" className="block text-sm font-medium text-gray-700 mb-2">
-                  Shopify Store URL <span className="text-rose-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="shopifyStore"
-                  name="shopifyStore"
-                  required
-                  value={formData.shopifyStore}
-                  onChange={handleChange}
-                  className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-500 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
-                  placeholder="yourstore.myshopify.com or https://yourstore.myshopify.com"
-                />
-              </div>
-
-              {submitStatus === "success" && (
-                <div className="rounded-lg bg-green-50 border border-green-200 p-4">
-                  <p className="text-sm font-medium text-green-800">
-                    Thank you! We've received your information and will be in touch soon.
+            {submitStatus === "success" ? (
+              /* Confirmation State */
+              <div className="space-y-6">
+                <div className="text-center">
+                  <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-green-100 mb-4">
+                    <svg className="h-8 w-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank you!</h3>
+                  <p className="text-base text-gray-600">
+                    We've received your information and will be in touch soon.
                   </p>
                 </div>
-              )}
 
-              {submitStatus === "error" && (
-                <div className="rounded-lg bg-red-50 border border-red-200 p-4">
-                  <p className="text-sm font-medium text-red-800">
-                    Something went wrong. Please try again later.
-                  </p>
+                <div className="rounded-lg bg-gray-50 border border-gray-200 p-6 space-y-4">
+                  <div>
+                    <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Name</div>
+                    <div className="text-base font-medium text-gray-900">{formData.name}</div>
+                  </div>
+                  <div>
+                    <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Email</div>
+                    <div className="text-base font-medium text-gray-900">{formData.email}</div>
+                  </div>
+                  {formData.linkedin && (
+                    <div>
+                      <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">LinkedIn</div>
+                      <div className="text-base font-medium text-gray-900">
+                        <a href={formData.linkedin} target="_blank" rel="noopener noreferrer" className="text-rose-600 hover:text-rose-700 underline">
+                          {formData.linkedin}
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                  <div>
+                    <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-1">Shopify Store URL</div>
+                    <div className="text-base font-medium text-gray-900">
+                      <a href={formData.shopifyStore.startsWith('http') ? formData.shopifyStore : `https://${formData.shopifyStore}`} target="_blank" rel="noopener noreferrer" className="text-rose-600 hover:text-rose-700 underline">
+                        {formData.shopifyStore}
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              )}
+              </div>
+            ) : (
+              /* Form State */
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Name <span className="text-rose-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
+                    placeholder="Your full name"
+                  />
+                </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full rounded-lg bg-gray-900 px-8 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Submitting..." : "Submit"}
-              </button>
-            </form>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                    Email <span className="text-rose-600">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="linkedin" className="block text-sm font-medium text-gray-700 mb-2">
+                    LinkedIn Profile URL <span className="text-gray-400 text-xs">(optional)</span>
+                  </label>
+                  <input
+                    type="url"
+                    id="linkedin"
+                    name="linkedin"
+                    value={formData.linkedin}
+                    onChange={handleChange}
+                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
+                    placeholder="https://linkedin.com/in/yourprofile"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="shopifyStore" className="block text-sm font-medium text-gray-700 mb-2">
+                    Shopify Store URL <span className="text-rose-600">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="shopifyStore"
+                    name="shopifyStore"
+                    required
+                    value={formData.shopifyStore}
+                    onChange={handleChange}
+                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 placeholder-gray-400 focus:border-rose-500 focus:ring-2 focus:ring-rose-500/20 outline-none transition-all"
+                    placeholder="https://yourstore.myshopify.com"
+                  />
+                </div>
+
+                {submitStatus === "error" && (
+                  <div className="rounded-lg bg-red-50 border border-red-200 p-4">
+                    <p className="text-sm font-medium text-red-800">
+                      Something went wrong. Please try again later.
+                    </p>
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full rounded-lg bg-gray-900 px-8 py-3.5 text-base font-semibold text-white shadow-lg hover:bg-gray-800 hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? "Submitting..." : "Submit"}
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </section>

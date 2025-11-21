@@ -36,38 +36,6 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString(),
     });
 
-    // Send to Zapier webhook (if configured)
-    const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL;
-    if (zapierWebhookUrl) {
-      try {
-        const zapierPayload = {
-          name,
-          email,
-          linkedin: linkedin || "",
-          shopifyStore,
-          timestamp: new Date().toISOString(),
-          source: "giftshop.co",
-        };
-
-        const response = await fetch(zapierWebhookUrl, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(zapierPayload),
-        });
-
-        if (!response.ok) {
-          console.error("Failed to send to Zapier:", await response.text());
-        } else {
-          console.log("Successfully sent to Zapier");
-        }
-      } catch (error) {
-        console.error("Error sending to Zapier:", error);
-        // Don't fail the request if Zapier fails
-      }
-    }
-
     // Submit to Google Form via Google Apps Script (if configured)
     const googleFormScriptUrl = process.env.GOOGLE_FORM_SCRIPT_URL;
     console.log("Google Form Script URL configured:", !!googleFormScriptUrl);
