@@ -13,8 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GiftShop - The Perfect Gift Solution",
-  description: "GiftShop helps you find and send the perfect gifts. Discover our innovative gift solutions for Shopify stores.",
+  metadataBase: new URL("https://giftshop.co"),
+  title: "Giftshop - The Perfect Gift Solution",
+  description: "Giftshop helps Shopify stores increase retention, boost lifetime value, and turn loyal customers into advocates through strategic gifting.",
+  openGraph: {
+    title: "Giftshop - The Perfect Gift Solution",
+    description: "Giftshop helps Shopify stores increase retention, boost lifetime value, and turn loyal customers into advocates through strategic gifting.",
+    siteName: "Giftshop",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
