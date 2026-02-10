@@ -2,320 +2,62 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-/* Blob animation for vibrant background */
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
+/* Design System Animations — one-time only, no loops */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-.animate-blob {
-  animation: blob 7s infinite;
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.animation-delay-2000 {
-  animation-delay: 2s;
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
 }
 
-.animation-delay-4000 {
-  animation-delay: 4s;
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
 }
 
-/* Infinite Marquee Animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.animate-fadeInUp {
+  animation: fadeInUp 0.4s ease-out forwards;
 }
 
-@keyframes marquee-reverse {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.animate-scaleIn {
+  animation: scaleIn 0.4s ease-out forwards;
 }
 
-.animate-marquee {
-  animation: marquee 30s linear infinite;
+/* Word cycling — triggered per swap, not a CSS infinite loop */
+@keyframes wordFadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.animate-marquee-reverse {
-  animation: marquee-reverse 35s linear infinite;
+.animate-wordFadeInUp {
+  animation: wordFadeInUp 0.35s ease-out forwards;
 }
 
-/* Gift Flow Animation */
-@keyframes pulse-slow {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.02);
-  }
-}
-
-@keyframes gift-to-customer-1 {
-  0% {
-    transform: translate(-50%, 0) translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, 0) translate(-150px, 145px);
-    opacity: 0;
-  }
-}
-
-@keyframes gift-to-customer-2 {
-  0% {
-    transform: translate(-50%, 0) translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, 0) translate(0, 145px);
-    opacity: 0;
-  }
-}
-
-@keyframes gift-to-customer-3 {
-  0% {
-    transform: translate(-50%, 0) translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, 0) translate(150px, 145px);
-    opacity: 0;
-  }
-}
-
-/* Left Top Customer -> Friends 1 & 2 */
-@keyframes discount-to-friends-left-1 {
-  0% {
-    transform: translate(-50%, -50%) translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(-200px, 225px);
-    opacity: 0;
-  }
-}
-
-@keyframes discount-to-friends-left-2 {
-  0% {
-    transform: translate(-50%, -50%) translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(-120px, 225px);
-    opacity: 0;
-  }
-}
-
-/* Center Top Customer -> Friends 3 & 4 */
-@keyframes discount-to-friends-center-1 {
-  0% {
-    transform: translate(-50%, -50%) translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(-60px, 225px);
-    opacity: 0;
-  }
-}
-
-@keyframes discount-to-friends-center-2 {
-  0% {
-    transform: translate(-50%, -50%) translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(60px, 225px);
-    opacity: 0;
-  }
-}
-
-/* Right Top Customer -> Friends 5 & 6 */
-@keyframes discount-to-friends-right-1 {
-  0% {
-    transform: translate(-50%, -50%) translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(120px, 225px);
-    opacity: 0;
-  }
-}
-
-@keyframes discount-to-friends-right-2 {
-  0% {
-    transform: translate(-50%, -50%) translate(0, 0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) translate(200px, 225px);
-    opacity: 0;
-  }
-}
-
-@keyframes fade-in-delay {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.animate-pulse-slow {
-  animation: pulse-slow 3s ease-in-out infinite;
-}
-
-.animate-gift-to-customer-1 {
-  animation: gift-to-customer-1 2.5s ease-in-out infinite;
-}
-
-.animate-gift-to-customer-2 {
-  animation: gift-to-customer-2 2.5s ease-in-out infinite;
-  animation-delay: 0.8s;
-}
-
-.animate-gift-to-customer-3 {
-  animation: gift-to-customer-3 2.5s ease-in-out infinite;
-  animation-delay: 1.6s;
-}
-
-.animate-discount-to-friends-left-1 {
-  animation: discount-to-friends-left-1 2s ease-in-out infinite;
-}
-
-.animate-discount-to-friends-left-2 {
-  animation: discount-to-friends-left-2 2s ease-in-out infinite;
-}
-
-.animate-discount-to-friends-center-1 {
-  animation: discount-to-friends-center-1 2s ease-in-out infinite;
-}
-
-.animate-discount-to-friends-center-2 {
-  animation: discount-to-friends-center-2 2s ease-in-out infinite;
-}
-
-.animate-discount-to-friends-right-1 {
-  animation: discount-to-friends-right-1 2s ease-in-out infinite;
-}
-
-.animate-discount-to-friends-right-2 {
-  animation: discount-to-friends-right-2 2s ease-in-out infinite;
-}
-
-.animate-fade-in-delay {
-  animation: fade-in-delay 0.5s ease-out forwards;
-}
-
-@keyframes word-fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-word-fade-in {
-  animation: word-fade-in 0.5s ease-out;
-}
+/* Stagger delays for sequential entrance */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }

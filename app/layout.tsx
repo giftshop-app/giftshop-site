@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "GiftShop - The Perfect Gift Solution",
-  description: "GiftShop helps you find and send the perfect gifts. Discover our innovative gift solutions for Shopify stores.",
+  metadataBase: new URL("https://giftshop.co"),
+  title: "Giftshop - The Perfect Gift Solution",
+  description: "Giftshop helps Shopify stores increase retention, boost lifetime value, and turn loyal customers into advocates through strategic gifting.",
+  openGraph: {
+    title: "Giftshop - The Perfect Gift Solution",
+    description: "Giftshop helps Shopify stores increase retention, boost lifetime value, and turn loyal customers into advocates through strategic gifting.",
+    siteName: "Giftshop",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -24,9 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className="antialiased">
         {children}
       </body>
     </html>
