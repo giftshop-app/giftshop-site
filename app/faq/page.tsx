@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
-import type { Metadata } from "next";
 
 // ─── FAQ Data ────────────────────────────────────────────────────────────────
 
@@ -212,27 +211,62 @@ const recipientFAQs: Record<string, { q: string; a: string }[]> = {
 
 type Audience = "merchants" | "recipients";
 
+// ─── Highlight helper ────────────────────────────────────────────────────────
+
+function HighlightText({ text, query }: { text: string; query: string }) {
+  if (!query.trim()) return <>{text}</>;
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const parts = text.split(new RegExp(`(${escaped})`, "gi"));
+  return (
+    <>
+      {parts.map((part, i) =>
+        part.toLowerCase() === query.toLowerCase() ? (
+          <mark key={i} className="rounded bg-yellow-100 px-0.5 text-[#1a1a1a] not-italic">
+            {part}
+          </mark>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      )}
+    </>
+  );
+}
+
 // ─── Components ──────────────────────────────────────────────────────────────
 
-function AccordionItem({ q, a }: { q: string; a: string }) {
+function AccordionItem({
+  q,
+  a,
+  forceOpen = false,
+  searchQuery = "",
+}: {
+  q: string;
+  a: string;
+  forceOpen?: boolean;
+  searchQuery?: string;
+}) {
   const [open, setOpen] = useState(false);
+  const isOpen = forceOpen || open;
+
   return (
     <div className="border-b border-[#e5e7eb] last:border-0">
       <button
         onClick={() => setOpen(!open)}
         className="flex w-full items-start justify-between gap-4 py-5 text-left"
       >
-        <span className={`text-base font-semibold leading-6 transition-colors ${open ? "text-[#DA1B2B]" : "text-[#1a1a1a]"}`}>
-          {q}
+        <span className={`text-base font-semibold leading-6 transition-colors ${isOpen ? "text-[#DA1B2B]" : "text-[#1a1a1a]"}`}>
+          {searchQuery ? <HighlightText text={q} query={searchQuery} /> : q}
         </span>
-        <span className={`mt-0.5 flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>
-          <svg className={`h-5 w-5 transition-colors ${open ? "text-[#DA1B2B]" : "text-[#9ca3af]"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <span className={`mt-0.5 flex-shrink-0 transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}>
+          <svg className={`h-5 w-5 transition-colors ${isOpen ? "text-[#DA1B2B]" : "text-[#9ca3af]"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
           </svg>
         </span>
       </button>
-      {open && (
-        <p className="pb-5 text-base leading-7 text-[#4b5563]">{a}</p>
+      {isOpen && (
+        <p className="pb-5 text-base leading-7 text-[#4b5563]">
+          {searchQuery ? <HighlightText text={a} query={searchQuery} /> : a}
+        </p>
       )}
     </div>
   );
@@ -274,8 +308,58 @@ export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState<string>(
     Object.keys(merchantFAQs)[0]
   );
+  const [searchInput, setSearchInput] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState("");
+  const [searchOpen, setSearchOpen] = useState(false);
+  const searchRef = useRef<HTMLInputElement>(null);
 
   const faqs = audience === "merchants" ? merchantFAQs : recipientFAQs;
+
+  // 0.9s debounce
+  useEffect(() => {
+    if (!searchInput.trim()) {
+      setDebouncedQuery("");
+      return;
+    }
+    const timer = setTimeout(() => setDebouncedQuery(searchInput.trim()), 900);
+    return () => clearTimeout(timer);
+  }, [searchInput]);
+
+  // Compute which FAQ items match the debounced query
+  const matchedItems = useMemo(() => {
+    if (!debouncedQuery) return new Set<string>();
+    const q = debouncedQuery.toLowerCase();
+    const matched = new Set<string>();
+    Object.values(faqs).forEach((items) => {
+      items.forEach((item) => {
+        if (item.q.toLowerCase().includes(q) || item.a.toLowerCase().includes(q)) {
+          matched.add(item.q);
+        }
+      });
+    });
+    return matched;
+  }, [debouncedQuery, faqs]);
+
+  const matchCount = matchedItems.size;
+  const isReading = searchInput.trim().length > 0 && searchInput.trim() !== debouncedQuery;
+
+  // Scroll to first matching section when results arrive
+  useEffect(() => {
+    if (!debouncedQuery) return;
+    const q = debouncedQuery.toLowerCase();
+    for (const [category, items] of Object.entries(faqs)) {
+      const hasMatch = items.some(
+        (item) => item.q.toLowerCase().includes(q) || item.a.toLowerCase().includes(q)
+      );
+      if (hasMatch) {
+        setTimeout(() => {
+          const el = document.getElementById(category.toLowerCase().replace(/\s+/g, "-"));
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 50);
+        break;
+      }
+    }
+  }, [debouncedQuery, faqs]);
 
   const handleAudienceSwitch = (next: Audience) => {
     setAudience(next);
@@ -288,6 +372,17 @@ export default function FAQPage() {
     setActiveCategory(cat);
     const el = document.getElementById(cat.toLowerCase().replace(/\s+/g, "-"));
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const openSearch = () => {
+    setSearchOpen(true);
+    setTimeout(() => searchRef.current?.focus(), 60);
+  };
+
+  const closeSearch = () => {
+    setSearchOpen(false);
+    setSearchInput("");
+    setDebouncedQuery("");
   };
 
   return (
@@ -423,7 +518,13 @@ export default function FAQPage() {
                   </h2>
                   <div className="mt-4 divide-y divide-[#e5e7eb] rounded-xl border border-[#e5e7eb] bg-white px-6">
                     {items.map((item) => (
-                      <AccordionItem key={item.q} q={item.q} a={item.a} />
+                      <AccordionItem
+                        key={item.q}
+                        q={item.q}
+                        a={item.a}
+                        forceOpen={matchedItems.has(item.q)}
+                        searchQuery={debouncedQuery}
+                      />
                     ))}
                   </div>
                 </section>
@@ -480,6 +581,97 @@ export default function FAQPage() {
           <p className="text-sm text-[#9ca3af]">© {new Date().getFullYear()} Giftshop. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* ── Floating Search ── */}
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+        {searchOpen && (
+          <div className="w-80 overflow-hidden rounded-2xl border border-[#e5e7eb] bg-white shadow-2xl">
+            <div className="flex items-center gap-2 px-4 py-3">
+              <svg className="h-4 w-4 flex-shrink-0 text-[#9ca3af]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                ref={searchRef}
+                type="text"
+                value={searchInput}
+                onChange={(e) => setSearchInput(e.target.value)}
+                placeholder="Search FAQs…"
+                className="flex-1 text-sm text-[#1a1a1a] placeholder:text-[#9ca3af] outline-none"
+              />
+              {searchInput && (
+                <button
+                  onClick={() => { setSearchInput(""); setDebouncedQuery(""); }}
+                  className="flex-shrink-0 rounded p-0.5 text-[#9ca3af] hover:text-[#1a1a1a] transition-colors"
+                >
+                  <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
+
+            {isReading && (
+              <div className="border-t border-[#e5e7eb] px-4 py-3">
+                <div className="flex items-center gap-2 text-xs text-[#9ca3af]">
+                  <span className="flex gap-1">
+                    {[0, 150, 300].map((delay) => (
+                      <span
+                        key={delay}
+                        className="h-1.5 w-1.5 rounded-full bg-[#d1d5db] animate-bounce"
+                        style={{ animationDelay: `${delay}ms` }}
+                      />
+                    ))}
+                  </span>
+                  Reading your search…
+                </div>
+              </div>
+            )}
+
+            {debouncedQuery && !isReading && (
+              <div className="border-t border-[#e5e7eb] px-4 py-3">
+                {matchCount > 0 ? (
+                  <p className="text-xs text-[#6b7280]">
+                    <span className="font-semibold text-[#DA1B2B]">{matchCount}</span>{" "}
+                    result{matchCount !== 1 ? "s" : ""} — matching answers are open below
+                  </p>
+                ) : (
+                  <p className="text-xs text-[#9ca3af]">
+                    No results — try different words or{" "}
+                    <button
+                      onClick={() => handleAudienceSwitch(audience === "merchants" ? "recipients" : "merchants")}
+                      className="font-medium text-[#DA1B2B] hover:underline"
+                    >
+                      switch to {audience === "merchants" ? "recipient" : "merchant"} FAQs
+                    </button>
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        <button
+          onClick={searchOpen ? closeSearch : openSearch}
+          aria-label={searchOpen ? "Close search" : "Search FAQs"}
+          className={`flex items-center gap-2 rounded-full px-5 py-3 shadow-lg transition-all ${
+            searchOpen
+              ? "bg-[#1a1a1a] text-white hover:bg-[#374151]"
+              : "bg-[#DA1B2B] text-white hover:bg-[#B81520]"
+          }`}
+        >
+          {searchOpen ? (
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          )}
+          <span className="text-sm font-semibold">{searchOpen ? "Close" : "Search"}</span>
+        </button>
+      </div>
+
     </div>
   );
 }
