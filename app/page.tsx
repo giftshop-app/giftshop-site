@@ -787,7 +787,7 @@ export default function Home() {
               <h3 className="text-sm font-bold uppercase tracking-wider text-[#1a1a1a] mb-6">Resources</h3>
               <ul className="space-y-4">
                 <li><a href="#" className="text-base leading-7 text-[#4b5563] hover:text-[#DA1B2B] transition-colors">Documentation</a></li>
-                <li><a href="#" className="text-base leading-7 text-[#4b5563] hover:text-[#DA1B2B] transition-colors">Help Center</a></li>
+                <li><a href="/faq" className="text-base leading-7 text-[#4b5563] hover:text-[#DA1B2B] transition-colors">FAQ</a></li>
                 <li><a href="#" className="text-base leading-7 text-[#4b5563] hover:text-[#DA1B2B] transition-colors">Case Studies</a></li>
                 <li><a href="#" className="text-base leading-7 text-[#4b5563] hover:text-[#DA1B2B] transition-colors">Blog</a></li>
               </ul>
