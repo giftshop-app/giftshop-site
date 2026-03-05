@@ -474,8 +474,8 @@ export default function FAQPage() {
           <div className="flex items-center gap-6 text-sm text-[#4b5563]">
             <Link href="/faq" className="hover:text-[#DA1B2B] transition-colors">FAQ</Link>
             <a href="mailto:support@giftshop.co" className="hover:text-[#DA1B2B] transition-colors">Support</a>
-            <a href="#" className="hover:text-[#DA1B2B] transition-colors">Privacy</a>
-            <a href="#" className="hover:text-[#DA1B2B] transition-colors">Terms</a>
+            <Link href="/privacy" className="hover:text-[#DA1B2B] transition-colors">Privacy</Link>
+            <a href="mailto:support@giftshop.co" className="hover:text-[#DA1B2B] transition-colors">Terms</a>
           </div>
           <p className="text-sm text-[#9ca3af]">© {new Date().getFullYear()} Giftshop. All rights reserved.</p>
         </div>
