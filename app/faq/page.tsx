@@ -311,24 +311,18 @@ export default function FAQPage() {
     Object.keys(merchantFAQs)[0]
   );
   const [search, setSearch] = useState("");
+  const [debouncedSearch, setDebouncedSearch] = useState("");
 
-  const allFaqs = audience === "merchants" ? merchantFAQs : recipientFAQs;
+  useEffect(() => {
+    if (!search.trim()) {
+      setDebouncedSearch("");
+      return;
+    }
+    const timer = setTimeout(() => setDebouncedSearch(search), 750);
+    return () => clearTimeout(timer);
+  }, [search]);
 
-  // Filter FAQs by search query
-  const faqs = search.trim()
-    ? Object.fromEntries(
-        Object.entries(allFaqs)
-          .map(([cat, items]) => [
-            cat,
-            items.filter(
-              (item) =>
-                item.q.toLowerCase().includes(search.toLowerCase()) ||
-                item.a.toLowerCase().includes(search.toLowerCase())
-            ),
-          ])
-          .filter(([, items]) => (items as { q: string; a: string }[]).length > 0)
-      ) as Record<string, { q: string; a: string }[]>
-    : allFaqs;
+  const faqs = audience === "merchants" ? merchantFAQs : recipientFAQs;
 
   const handleAudienceSwitch = (next: Audience) => {
     setAudience(next);
@@ -493,15 +487,8 @@ export default function FAQPage() {
 
             {/* Questions */}
             <div className="space-y-14">
-              {Object.keys(faqs).length === 0 && search.trim() && (
-                <div className="text-center py-12">
-                  <p className="text-base text-[#4b5563]">No results for &ldquo;{search}&rdquo;</p>
-                  <button onClick={() => setSearch("")} className="mt-3 text-sm font-semibold text-[#DA1B2B] hover:text-[#B81520] transition-colors">
-                    Clear search
-                  </button>
-                </div>
-              )}
               {(() => {
+                const active = debouncedSearch.trim();
                 let firstMatchFound = false;
                 return Object.entries(faqs).map(([category, items]) => (
                   <section
@@ -514,9 +501,9 @@ export default function FAQPage() {
                     </h2>
                     <div className="mt-4 divide-y divide-[#e5e7eb] rounded-xl border border-[#e5e7eb] bg-white px-6">
                       {items.map((item) => {
-                        const isMatch = !!search.trim() && (
-                          item.q.toLowerCase().includes(search.toLowerCase()) ||
-                          item.a.toLowerCase().includes(search.toLowerCase())
+                        const isMatch = !!active && (
+                          item.q.toLowerCase().includes(active.toLowerCase()) ||
+                          item.a.toLowerCase().includes(active.toLowerCase())
                         );
                         const isFirst = isMatch && !firstMatchFound;
                         if (isFirst) firstMatchFound = true;
@@ -526,7 +513,7 @@ export default function FAQPage() {
                             q={item.q}
                             a={item.a}
                             forceOpen={isMatch}
-                            search={search.trim() || undefined}
+                            search={active || undefined}
                             isFirstMatch={isFirst}
                           />
                         );
