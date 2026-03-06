@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -214,16 +214,50 @@ type Audience = "merchants" | "recipients";
 
 // ─── Components ──────────────────────────────────────────────────────────────
 
-function AccordionItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
+function highlightText(text: string, query: string) {
+  if (!query.trim()) return text;
+  const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const parts = text.split(new RegExp(`(${escaped})`, "gi"));
+  return parts.map((part, i) =>
+    part.toLowerCase() === query.toLowerCase() ? (
+      <mark key={i} className="bg-[#F5B3B8] text-[#1a1a1a] rounded-sm px-0.5">{part}</mark>
+    ) : (
+      part
+    )
+  );
+}
+
+function AccordionItem({
+  q,
+  a,
+  forceOpen,
+  search,
+  isFirstMatch,
+}: {
+  q: string;
+  a: string;
+  forceOpen?: boolean;
+  search?: string;
+  isFirstMatch?: boolean;
+}) {
+  const [manualOpen, setManualOpen] = useState(false);
+  const open = forceOpen || manualOpen;
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isFirstMatch && ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [isFirstMatch]);
+
   return (
-    <div className="border-b border-[#e5e7eb] last:border-0">
+    <div ref={isFirstMatch ? ref : undefined} className="border-b border-[#e5e7eb] last:border-0 scroll-mt-28">
       <button
-        onClick={() => setOpen(!open)}
+        onClick={() => setManualOpen(!manualOpen)}
         className="flex w-full items-start justify-between gap-4 py-5 text-left"
       >
         <span className={`text-base font-semibold leading-6 transition-colors ${open ? "text-[#DA1B2B]" : "text-[#1a1a1a]"}`}>
-          {q}
+          {search ? highlightText(q, search) : q}
         </span>
         <span className={`mt-0.5 flex-shrink-0 transition-transform duration-200 ${open ? "rotate-45" : ""}`}>
           <svg className={`h-5 w-5 transition-colors ${open ? "text-[#DA1B2B]" : "text-[#9ca3af]"}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -232,7 +266,9 @@ function AccordionItem({ q, a }: { q: string; a: string }) {
         </span>
       </button>
       {open && (
-        <p className="pb-5 text-base leading-7 text-[#4b5563]">{a}</p>
+        <p className="pb-5 text-base leading-7 text-[#4b5563]">
+          {search ? highlightText(a, search) : a}
+        </p>
       )}
     </div>
   );
@@ -465,22 +501,40 @@ export default function FAQPage() {
                   </button>
                 </div>
               )}
-              {Object.entries(faqs).map(([category, items]) => (
-                <section
-                  key={category}
-                  id={category.toLowerCase().replace(/\s+/g, "-")}
-                  className="scroll-mt-28"
-                >
-                  <h2 className="mb-1 text-xs font-bold uppercase tracking-wider text-[#DA1B2B]">
-                    {category}
-                  </h2>
-                  <div className="mt-4 divide-y divide-[#e5e7eb] rounded-xl border border-[#e5e7eb] bg-white px-6">
-                    {items.map((item) => (
-                      <AccordionItem key={item.q} q={item.q} a={item.a} />
-                    ))}
-                  </div>
-                </section>
-              ))}
+              {(() => {
+                let firstMatchFound = false;
+                return Object.entries(faqs).map(([category, items]) => (
+                  <section
+                    key={category}
+                    id={category.toLowerCase().replace(/\s+/g, "-")}
+                    className="scroll-mt-28"
+                  >
+                    <h2 className="mb-1 text-xs font-bold uppercase tracking-wider text-[#DA1B2B]">
+                      {category}
+                    </h2>
+                    <div className="mt-4 divide-y divide-[#e5e7eb] rounded-xl border border-[#e5e7eb] bg-white px-6">
+                      {items.map((item) => {
+                        const isMatch = !!search.trim() && (
+                          item.q.toLowerCase().includes(search.toLowerCase()) ||
+                          item.a.toLowerCase().includes(search.toLowerCase())
+                        );
+                        const isFirst = isMatch && !firstMatchFound;
+                        if (isFirst) firstMatchFound = true;
+                        return (
+                          <AccordionItem
+                            key={item.q}
+                            q={item.q}
+                            a={item.a}
+                            forceOpen={isMatch}
+                            search={search.trim() || undefined}
+                            isFirstMatch={isFirst}
+                          />
+                        );
+                      })}
+                    </div>
+                  </section>
+                ));
+              })()}
             </div>
           </div>
         </div>
