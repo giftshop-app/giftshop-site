@@ -274,11 +274,29 @@ export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState<string>(
     Object.keys(merchantFAQs)[0]
   );
+  const [search, setSearch] = useState("");
 
-  const faqs = audience === "merchants" ? merchantFAQs : recipientFAQs;
+  const allFaqs = audience === "merchants" ? merchantFAQs : recipientFAQs;
+
+  // Filter FAQs by search query
+  const faqs = search.trim()
+    ? Object.fromEntries(
+        Object.entries(allFaqs)
+          .map(([cat, items]) => [
+            cat,
+            items.filter(
+              (item) =>
+                item.q.toLowerCase().includes(search.toLowerCase()) ||
+                item.a.toLowerCase().includes(search.toLowerCase())
+            ),
+          ])
+          .filter(([, items]) => (items as { q: string; a: string }[]).length > 0)
+      ) as Record<string, { q: string; a: string }[]>
+    : allFaqs;
 
   const handleAudienceSwitch = (next: Audience) => {
     setAudience(next);
+    setSearch("");
     setActiveCategory(
       Object.keys(next === "merchants" ? merchantFAQs : recipientFAQs)[0]
     );
@@ -365,6 +383,33 @@ export default function FAQPage() {
               I Received a Gift
             </button>
           </div>
+
+          {/* Search */}
+          <div className="mt-6 mx-auto max-w-lg">
+            <div className="relative">
+              <svg className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#9ca3af]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search FAQs..."
+                className="w-full rounded-xl border border-[#e5e7eb] bg-[#f9fafb] py-3 pl-12 pr-10 text-sm text-[#1a1a1a] placeholder-[#9ca3af] outline-none transition-colors focus:border-[#DA1B2B] focus:bg-white focus:ring-1 focus:ring-[#DA1B2B]"
+              />
+              {search && (
+                <button
+                  onClick={() => setSearch("")}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[#9ca3af] hover:text-[#4b5563] transition-colors"
+                >
+                  <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -412,6 +457,14 @@ export default function FAQPage() {
 
             {/* Questions */}
             <div className="space-y-14">
+              {Object.keys(faqs).length === 0 && search.trim() && (
+                <div className="text-center py-12">
+                  <p className="text-base text-[#4b5563]">No results for &ldquo;{search}&rdquo;</p>
+                  <button onClick={() => setSearch("")} className="mt-3 text-sm font-semibold text-[#DA1B2B] hover:text-[#B81520] transition-colors">
+                    Clear search
+                  </button>
+                </div>
+              )}
               {Object.entries(faqs).map(([category, items]) => (
                 <section
                   key={category}
