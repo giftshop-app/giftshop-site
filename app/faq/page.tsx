@@ -377,8 +377,12 @@ export default function FAQPage() {
     setActiveCategory(cat);
     const el = document.getElementById(cat.toLowerCase().replace(/\s+/g, "-"));
     if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top, behavior: "smooth" });
+      const targetTop = el.getBoundingClientRect().top + window.scrollY - 100;
+      const currentScroll = window.scrollY;
+      // Only scroll if we're more than 10px away from the target
+      if (Math.abs(targetTop - currentScroll) > 10) {
+        window.scrollTo({ top: targetTop, behavior: "smooth" });
+      }
     }
   };
 
