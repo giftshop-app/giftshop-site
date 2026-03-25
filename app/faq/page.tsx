@@ -524,19 +524,32 @@ export default function FAQPage() {
             {/* Sidebar — desktop only */}
             <aside className="hidden lg:block">
               <div className="sticky top-28">
-                {/* Search pill — appears when main search scrolls out of view */}
+                {/* Sticky search — appears when main search scrolls out of view */}
                 <div
                   className={`mb-3 overflow-hidden transition-all duration-300 ease-in-out ${searchHidden ? "max-h-12 opacity-100" : "max-h-0 opacity-0"}`}
                 >
-                  <button
-                    onClick={() => searchRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })}
-                    className="flex w-full items-center gap-2 rounded-lg border border-[#DA1B2B] bg-white px-3 py-2 text-sm text-[#DA1B2B] transition-colors hover:bg-[#FEF9F9]"
-                  >
-                    <svg className="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="relative">
+                    <svg className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#DA1B2B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
-                    Search FAQs
-                  </button>
+                    <input
+                      type="text"
+                      value={search}
+                      onChange={(e) => setSearch(e.target.value)}
+                      placeholder="Search FAQs..."
+                      className="w-full rounded-lg border border-[#DA1B2B] bg-white py-2 pl-9 pr-8 text-sm text-[#1a1a1a] placeholder-[#DA1B2B]/50 outline-none transition-colors focus:bg-white focus:ring-1 focus:ring-[#DA1B2B]"
+                    />
+                    {search && (
+                      <button
+                        onClick={() => setSearch("")}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-[#9ca3af] hover:text-[#4b5563] transition-colors"
+                      >
+                        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    )}
+                  </div>
                 </div>
 
                 <p className="mb-3 px-3 text-xs font-bold uppercase tracking-wider text-[#9ca3af]">
