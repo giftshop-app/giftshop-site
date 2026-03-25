@@ -526,7 +526,7 @@ export default function FAQPage() {
               <div className="sticky top-28">
                 {/* Sticky search — appears when main search scrolls out of view */}
                 <div
-                  className={`mb-3 overflow-hidden transition-all duration-300 ease-in-out ${searchHidden ? "max-h-12 opacity-100" : "max-h-0 opacity-0"}`}
+                  className={`mb-3 overflow-hidden transition-all duration-300 ease-in-out px-3 ${searchHidden ? "max-h-12 opacity-100" : "max-h-0 opacity-0"}`}
                 >
                   <div className="relative">
                     <svg className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#DA1B2B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
