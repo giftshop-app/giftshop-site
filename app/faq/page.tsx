@@ -32,7 +32,7 @@ const merchantFAQs: Record<string, { q: string; a: string }[]> = {
   "Sending Gifts": [
     {
       q: "How do I send a gift to a customer?",
-      a: "From your GiftShop dashboard, go to Gifts → Send a Gift. Search for your customer by name or email, pick one or more products from your catalog, write an optional personal message, and hit Send. Your customer will receive a branded email with a secure link to claim their gift.",
+      a: "Go to the Gifts tab and you'll see AI-powered suggestions for who to gift. Click any suggestion and GiftShop will prepare the gift for you — selecting the right product and writing a personalized message. Review, edit if needed, and hit Send. You can also use the search bar to find a specific customer, or use the GiftShop Agent to prepare gifts in bulk.",
     },
     {
       q: "Can I let the recipient choose their own products?",
@@ -53,6 +53,46 @@ const merchantFAQs: Record<string, { q: string; a: string }[]> = {
     {
       q: "Can I cancel a gift after sending it?",
       a: "Yes, pending gifts can be cancelled before the recipient claims them. Once a gift has been claimed and an order created in Shopify, it follows your standard order cancellation or refund process.",
+    },
+  ],
+  "GiftShop Agent": [
+    {
+      q: "What is the GiftShop Agent?",
+      a: "The GiftShop Agent is an AI-powered gift concierge built into the Gifts tab. Tell it what you'd like to do — like 'gift my lapsed customers' or 'welcome new buyers' — and it will select the right product and write a personalized message for each customer. You just review and approve.",
+    },
+    {
+      q: "How does the Agent pick products and write messages?",
+      a: "The Agent uses AI to match products to customers based on their purchase history and value to your store. It won't suggest a $500 gift for a $50 customer. Messages are personalized based on the customer's relationship with your brand — referencing their order count, loyalty, or recent activity.",
+    },
+    {
+      q: "Can I edit what the Agent prepares?",
+      a: "Yes. Every prepared gift can be edited before sending. Click Edit to open a modal where you can change the product, adjust variant selections (size, colour, etc.), and rewrite the message. You can also remove customers from the batch if you don't want to gift them.",
+    },
+    {
+      q: "What are the quick scenario pills?",
+      a: "These are one-click shortcuts based on your actual customer data. If you have 8 lapsed customers, you'll see 'Win back 8 lapsed customers'. Click it and the Agent prepares gifts for all of them instantly. The scenarios update dynamically as your customer data changes.",
+    },
+    {
+      q: "Can I send gifts one at a time or all at once?",
+      a: "Both. After the Agent prepares a batch, you can send individual gifts with the Send button on each row, or click 'Send all' to send the entire batch at once. Each gift is tracked independently in your Gift History.",
+    },
+  ],
+  "Dashboard & Monitors": [
+    {
+      q: "What does my dashboard show?",
+      a: "Your dashboard is a CEO briefing: a 'Since you've been away' summary of recent activity, key metrics (gifts sent, claim rate, customers gifted), GiftShop Monitors showing what we're watching, and actionable cards highlighting what needs your attention. Everything links deeper into the app where you can take action.",
+    },
+    {
+      q: "What are GiftShop Monitors?",
+      a: "Monitors are intelligent systems that watch your customer base for gifting opportunities. There are three: Milestones (anniversaries, VIP thresholds), Customer Retention (overdue shoppers), and Smart Groups (customer segments like loyal buyers, new customers). You can enable or disable each one in Settings.",
+    },
+    {
+      q: "What is the 'Since you've been away' section?",
+      a: "It's a summary of everything that happened since your last login — gifts sent by your team, gifts auto-sent by automations, gifts claimed by recipients, and new opportunities detected by your monitors. Click 'Mark as read' to clear it.",
+    },
+    {
+      q: "What are the 'Needs Attention' cards?",
+      a: "These are actionable items surfaced by your monitors — for example, ' 8 customers are overdue to shop' or '2 top spenders have never been gifted'. Each card links to the Gifts tab where you can review the customers and take action.",
     },
   ],
   "Automations": [
