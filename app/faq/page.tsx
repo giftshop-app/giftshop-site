@@ -286,7 +286,8 @@ function AccordionItem({
 
   useEffect(() => {
     if (isFirstMatch && ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+      const top = ref.current.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   }, [isFirstMatch]);
 
@@ -375,7 +376,10 @@ export default function FAQPage() {
   const scrollToCategory = (cat: string) => {
     setActiveCategory(cat);
     const el = document.getElementById(cat.toLowerCase().replace(/\s+/g, "-"));
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 100;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
   };
 
   return (
