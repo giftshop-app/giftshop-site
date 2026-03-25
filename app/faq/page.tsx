@@ -364,6 +364,19 @@ export default function FAQPage() {
   }, [search]);
 
   const faqs = audience === "merchants" ? merchantFAQs : recipientFAQs;
+  const searchRef = useRef<HTMLDivElement>(null);
+  const [searchHidden, setSearchHidden] = useState(false);
+
+  // Track when the search bar scrolls out of view
+  useEffect(() => {
+    if (!searchRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setSearchHidden(!entry.isIntersecting),
+      { threshold: 0 }
+    );
+    observer.observe(searchRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   // Track which section is visible as user scrolls
   useEffect(() => {
@@ -475,7 +488,7 @@ export default function FAQPage() {
           </div>
 
           {/* Search */}
-          <div className="mt-6 mx-auto max-w-lg">
+          <div ref={searchRef} className="mt-6 mx-auto max-w-lg">
             <div className="relative">
               <svg className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#9ca3af]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -511,6 +524,21 @@ export default function FAQPage() {
             {/* Sidebar — desktop only */}
             <aside className="hidden lg:block">
               <div className="sticky top-28">
+                {/* Search pill — appears when main search scrolls out of view */}
+                <div
+                  className={`mb-3 overflow-hidden transition-all duration-300 ease-in-out ${searchHidden ? "max-h-12 opacity-100" : "max-h-0 opacity-0"}`}
+                >
+                  <button
+                    onClick={() => searchRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })}
+                    className="flex w-full items-center gap-2 rounded-lg border border-[#DA1B2B] bg-white px-3 py-2 text-sm text-[#DA1B2B] transition-colors hover:bg-[#FEF9F9]"
+                  >
+                    <svg className="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    Search FAQs
+                  </button>
+                </div>
+
                 <p className="mb-3 px-3 text-xs font-bold uppercase tracking-wider text-[#9ca3af]">
                   Categories
                 </p>
