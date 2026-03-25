@@ -326,20 +326,20 @@ function CategorySection({
   active: boolean;
   onClick: () => void;
 }) {
+  const href = `#${category.toLowerCase().replace(/\s+/g, "-")}`;
   return (
-    <div id={category.toLowerCase().replace(/\s+/g, "-")} className="scroll-mt-24">
-      <div className="mb-1">
-        <button
-          onClick={onClick}
-          className="group flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors hover:bg-[#FEF9F9]"
-        >
-          <span className={`h-1.5 w-1.5 flex-shrink-0 rounded-full transition-colors ${active ? "bg-[#DA1B2B]" : "bg-[#d1d5db] group-hover:bg-[#DA1B2B]"}`} />
-          <span className={`text-sm font-medium transition-colors ${active ? "text-[#DA1B2B]" : "text-[#4b5563] group-hover:text-[#DA1B2B]"}`}>
-            {category}
-          </span>
-          <span className="ml-auto text-xs text-[#9ca3af]">{items.length}</span>
-        </button>
-      </div>
+    <div className="mb-1">
+      <a
+        href={href}
+        onClick={onClick}
+        className="group flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors hover:bg-[#FEF9F9] no-underline"
+      >
+        <span className={`h-1.5 w-1.5 flex-shrink-0 rounded-full transition-colors ${active ? "bg-[#DA1B2B]" : "bg-[#d1d5db] group-hover:bg-[#DA1B2B]"}`} />
+        <span className={`text-sm font-medium transition-colors ${active ? "text-[#DA1B2B]" : "text-[#4b5563] group-hover:text-[#DA1B2B]"}`}>
+          {category}
+        </span>
+        <span className="ml-auto text-xs text-[#9ca3af]">{items.length}</span>
+      </a>
     </div>
   );
 }
@@ -375,15 +375,6 @@ export default function FAQPage() {
 
   const scrollToCategory = (cat: string) => {
     setActiveCategory(cat);
-    const el = document.getElementById(cat.toLowerCase().replace(/\s+/g, "-"));
-    if (el) {
-      const targetTop = el.getBoundingClientRect().top + window.scrollY - 100;
-      const currentScroll = window.scrollY;
-      // Only scroll if we're more than 10px away from the target
-      if (Math.abs(targetTop - currentScroll) > 10) {
-        window.scrollTo({ top: targetTop, behavior: "smooth" });
-      }
-    }
   };
 
   return (
