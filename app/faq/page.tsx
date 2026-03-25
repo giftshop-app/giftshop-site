@@ -365,6 +365,27 @@ export default function FAQPage() {
 
   const faqs = audience === "merchants" ? merchantFAQs : recipientFAQs;
 
+  // Track which section is visible as user scrolls
+  useEffect(() => {
+    const categories = Object.keys(faqs);
+    const observers: IntersectionObserver[] = [];
+
+    categories.forEach((cat) => {
+      const el = document.getElementById(cat.toLowerCase().replace(/\s+/g, "-"));
+      if (!el) return;
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveCategory(cat);
+        },
+        { rootMargin: "-120px 0px -60% 0px", threshold: 0 }
+      );
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, [faqs]);
+
   const handleAudienceSwitch = (next: Audience) => {
     setAudience(next);
     setSearch("");
