@@ -58,12 +58,12 @@ export default function ComingSoonPage() {
           <h1
             className={`${styles.headlineEnter} text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.02] tracking-[-0.02em] text-[#1a1a1a]`}
           >
-            Great gifts,{" "}
-            <span className="italic text-[#DA1B2B]">growing stores.</span>
+            Win new customers.{" "}
+            <span className="italic text-[#DA1B2B]">Keep the ones you have.</span>
           </h1>
 
           <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#4b5563] max-w-[440px] mx-auto">
-            Strategic gifting for Shopify merchants is almost here. Join the early access list.
+            Built for Shopify merchants. Launching soon.
           </p>
 
           <div className="mt-8 max-w-[420px] mx-auto">
