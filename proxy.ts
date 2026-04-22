@@ -13,7 +13,7 @@ function isAllowListed(pathname: string): boolean {
   return false;
 }
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const mode = process.env.COMING_SOON_MODE;
   if (mode !== "true") return NextResponse.next();
 
