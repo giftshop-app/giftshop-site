@@ -44,7 +44,7 @@ export default function ComingSoonPage() {
       <Decor />
 
       <main className="relative z-10 flex min-h-screen items-center justify-center px-5 py-24">
-        <div className="w-full max-w-[520px] text-center">
+        <div className="w-full max-w-[720px] text-center">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white border border-[#e5e7eb] px-3.5 py-1.5">
             <span
               aria-hidden="true"
@@ -56,9 +56,10 @@ export default function ComingSoonPage() {
           </div>
 
           <h1
-            className={`${styles.headlineEnter} text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.02] tracking-[-0.02em] text-[#1a1a1a]`}
+            className={`${styles.headlineEnter} text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#1a1a1a]`}
           >
-            Win new customers.{" "}
+            Win new customers.
+            <br />
             <span className="italic text-[#DA1B2B]">Keep the ones you have.</span>
           </h1>
 
