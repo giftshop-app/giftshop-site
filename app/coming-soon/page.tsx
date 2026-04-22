@@ -4,7 +4,7 @@ import { EmailCaptureForm } from "./email-capture-form";
 import styles from "./coming-soon.module.css";
 
 export const metadata: Metadata = {
-  title: "Giftshop — Coming Soon",
+  title: "GiftShop — Coming Soon",
   description: "Strategic gifting for Shopify merchants. Join the early access list.",
   robots: { index: false, follow: false },
 };
@@ -18,9 +18,26 @@ export default function ComingSoonPage() {
       }}
     >
       <header className="absolute top-5 left-5 sm:top-7 sm:left-7 z-20 flex items-center gap-2.5">
-        <div className="h-7 w-7 rounded-md bg-[#DA1B2B]" aria-hidden="true" />
+        <div
+          className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#DA1B2B]"
+          aria-hidden="true"
+        >
+          <svg
+            className="h-5 w-5 text-white"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"
+            />
+          </svg>
+        </div>
         <span className="text-lg font-extrabold tracking-tight text-[#1a1a1a]">
-          Giftshop
+          GiftShop
         </span>
       </header>
 
@@ -56,7 +73,7 @@ export default function ComingSoonPage() {
       </main>
 
       <footer className="absolute bottom-5 left-0 right-0 text-center z-10">
-        <p className="text-xs text-[#9ca3af]">© 2026 Giftshop</p>
+        <p className="text-xs text-[#9ca3af]">© 2026 GiftShop</p>
       </footer>
     </div>
   );
