@@ -9,6 +9,10 @@ function isAllowListed(pathname: string): boolean {
   if (pathname.startsWith("/api/")) return true;
   if (pathname.startsWith("/_next/")) return true;
   if (pathname === "/favicon.ico" || pathname === "/robots.txt" || pathname === "/icon.svg") return true;
+  // Metadata image routes that social/messaging apps fetch for link previews.
+  if (pathname.startsWith("/opengraph-image")) return true;
+  if (pathname.startsWith("/twitter-image")) return true;
+  if (pathname.startsWith("/apple-icon")) return true;
   if (/\.[a-zA-Z0-9]{1,6}$/.test(pathname)) return true;
   return false;
 }

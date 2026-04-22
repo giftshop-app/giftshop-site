@@ -3,13 +3,19 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://giftshop.co"),
-  title: "Giftshop - The Perfect Gift Solution",
-  description: "Giftshop helps Shopify stores increase retention, boost lifetime value, and turn loyal customers into advocates through strategic gifting.",
+  title: "GiftShop. Coming soon.",
+  description: "Win new customers. Keep the ones you have. Built for Shopify merchants.",
   openGraph: {
-    title: "Giftshop - The Perfect Gift Solution",
-    description: "Giftshop helps Shopify stores increase retention, boost lifetime value, and turn loyal customers into advocates through strategic gifting.",
-    siteName: "Giftshop",
+    title: "GiftShop. Coming soon.",
+    description: "Win new customers. Keep the ones you have. Built for Shopify merchants.",
+    siteName: "GiftShop",
     type: "website",
+    url: "https://giftshop.co",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GiftShop. Coming soon.",
+    description: "Win new customers. Keep the ones you have. Built for Shopify merchants.",
   },
 };
 

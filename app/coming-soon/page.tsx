@@ -4,8 +4,8 @@ import { EmailCaptureForm } from "./email-capture-form";
 import styles from "./coming-soon.module.css";
 
 export const metadata: Metadata = {
-  title: "GiftShop — Coming Soon",
-  description: "Strategic gifting for Shopify merchants. Join the early access list.",
+  title: "GiftShop. Coming soon.",
+  description: "Win new customers. Keep the ones you have. Built for Shopify merchants.",
   robots: { index: false, follow: false },
 };
 
