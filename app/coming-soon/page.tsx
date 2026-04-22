@@ -5,7 +5,7 @@ import styles from "./coming-soon.module.css";
 
 export const metadata: Metadata = {
   title: "GiftShop. Coming soon.",
-  description: "Win new customers. Keep the ones you have. Built for Shopify merchants.",
+  description: "Win new customers. Reward the ones you have. Built for Shopify merchants.",
   robots: { index: false, follow: false },
 };
 
@@ -56,18 +56,18 @@ export default function ComingSoonPage() {
           </div>
 
           <h1
-            className={`${styles.headlineEnter} text-4xl sm:text-5xl font-extrabold leading-[1.05] tracking-[-0.02em] text-[#1a1a1a]`}
+            className={`${styles.headlineEnter} text-[26px] sm:text-5xl font-extrabold leading-[1.1] sm:leading-[1.05] tracking-[-0.025em] text-[#1a1a1a]`}
           >
             Win new customers.
             <br />
-            <span className="italic text-[#DA1B2B]">Keep the ones you have.</span>
+            <span className="italic text-[#DA1B2B]">Reward the ones you have.</span>
           </h1>
 
-          <p className="mt-5 text-base sm:text-lg leading-relaxed text-[#4b5563] max-w-[440px] mx-auto">
+          <p className="mt-4 sm:mt-5 text-sm sm:text-lg leading-relaxed text-[#4b5563] max-w-[440px] mx-auto">
             Built for Shopify merchants. Launching soon.
           </p>
 
-          <div className="mt-8 max-w-[420px] mx-auto">
+          <div className="mt-7 sm:mt-8 max-w-[440px] mx-auto">
             <EmailCaptureForm />
           </div>
         </div>

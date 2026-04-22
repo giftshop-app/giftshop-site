@@ -108,7 +108,7 @@ export default function Image() {
           >
             <div style={{ color: "#1a1a1a" }}>Win new customers.</div>
             <div style={{ color: "#DA1B2B", fontStyle: "italic" }}>
-              Keep the ones you have.
+              Reward the ones you have.
             </div>
           </div>
 

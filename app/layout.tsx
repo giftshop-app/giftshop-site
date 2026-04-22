@@ -4,10 +4,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://giftshop.co"),
   title: "GiftShop. Coming soon.",
-  description: "Win new customers. Keep the ones you have. Built for Shopify merchants.",
+  description: "Win new customers. Reward the ones you have. Built for Shopify merchants.",
   openGraph: {
     title: "GiftShop. Coming soon.",
-    description: "Win new customers. Keep the ones you have. Built for Shopify merchants.",
+    description: "Win new customers. Reward the ones you have. Built for Shopify merchants.",
     siteName: "GiftShop",
     type: "website",
     url: "https://giftshop.co",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GiftShop. Coming soon.",
-    description: "Win new customers. Keep the ones you have. Built for Shopify merchants.",
+    description: "Win new customers. Reward the ones you have. Built for Shopify merchants.",
   },
 };
 

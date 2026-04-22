@@ -21,11 +21,10 @@ const DESKTOP_ITEMS: DecorItem[] = [
   { emoji: "✨", top: "30%", left: "45%", size: "28px", rotate: 8,   delay: "2.4s", opacity: 0.5 },
 ];
 
+// Mobile keeps only the top pair — bottom decor was overlapping with the form.
 const MOBILE_ITEMS: DecorItem[] = [
-  { emoji: "🎁", top: "14%", left: "4%",  size: "40px", rotate: -12, delay: "0s",   opacity: 0.9 },
-  { emoji: "🎀", top: "18%", right: "6%", size: "44px", rotate: 16,  delay: "0.4s", opacity: 0.9 },
-  { emoji: "🎁", top: "72%", left: "6%",  size: "44px", rotate: 12,  delay: "1.2s", opacity: 0.9 },
-  { emoji: "🎀", top: "76%", right: "6%", size: "40px", rotate: -14, delay: "1.6s", opacity: 0.9 },
+  { emoji: "🎁", top: "10%", left: "4%",  size: "40px", rotate: -12, delay: "0s",   opacity: 0.9 },
+  { emoji: "🎀", top: "14%", right: "6%", size: "44px", rotate: 16,  delay: "0.4s", opacity: 0.9 },
 ];
 
 function renderItem(item: DecorItem, idx: number, key: string) {

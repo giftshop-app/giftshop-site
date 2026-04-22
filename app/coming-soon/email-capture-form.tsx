@@ -64,7 +64,7 @@ export function EmailCaptureForm() {
         </label>
       </div>
 
-      <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row sm:gap-3">
         <label htmlFor="early-access-email" className="sr-only">
           Email address
         </label>
@@ -79,12 +79,12 @@ export function EmailCaptureForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           disabled={disabled}
-          className="flex-1 h-12 rounded-xl border border-[#e5e7eb] bg-white px-4 text-base text-[#1a1a1a] placeholder:text-[#9ca3af] outline-none focus:border-[#DA1B2B] focus:ring-2 focus:ring-[#DA1B2B]/20 disabled:opacity-60"
+          className="flex-1 h-14 sm:h-12 rounded-xl border-2 border-[#e5e7eb] bg-white px-5 text-base text-[#1a1a1a] placeholder:text-[#9ca3af] outline-none focus:border-[#DA1B2B] focus:ring-2 focus:ring-[#DA1B2B]/20 disabled:opacity-60"
         />
         <button
           type="submit"
           disabled={disabled}
-          className="h-12 inline-flex items-center justify-center gap-2 rounded-xl bg-[#DA1B2B] px-6 text-base font-semibold text-white hover:bg-[#B81520] transition-colors disabled:opacity-70"
+          className="h-14 sm:h-12 inline-flex items-center justify-center gap-2 rounded-xl bg-[#DA1B2B] px-6 text-base font-semibold text-white hover:bg-[#B81520] transition-colors disabled:opacity-70"
         >
           {status === "submitting" ? "Joining..." : "Get early access"}
           {status !== "submitting" && (
