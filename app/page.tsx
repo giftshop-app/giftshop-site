@@ -58,7 +58,7 @@ export default function Home() {
               <div className="mb-4">
                 <div className="inline-flex items-center gap-3 rounded-full bg-[#f3f4f6] px-5 py-2.5 border border-[#e5e7eb]">
                   <img
-                    src="/shopify-assets/brandmark/shopify_glyph.svg"
+                    src="/shopify-assets/02-glyph/svg/glyph-color.svg"
                     alt="Shopify"
                     className="h-5 w-5 flex-shrink-0"
                     width="20"

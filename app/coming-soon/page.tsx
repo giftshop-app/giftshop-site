@@ -63,11 +63,25 @@ export default function ComingSoonPage() {
             <span className="italic text-[#DA1B2B]">Reward the ones you have.</span>
           </h1>
 
-          <p className="mt-4 sm:mt-5 text-sm sm:text-lg leading-relaxed text-[#4b5563] max-w-[440px] mx-auto">
-            Built for Shopify merchants. Launching soon.
+          <div className="mt-5 sm:mt-6 inline-flex items-center gap-2 rounded-full bg-white border border-[#e5e7eb] px-4 py-2 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+            <img
+              src="/shopify-assets/02-glyph/svg/glyph-color.svg"
+              alt=""
+              aria-hidden="true"
+              width="18"
+              height="18"
+              className="h-[18px] w-[18px]"
+            />
+            <span className="text-xs sm:text-sm font-semibold text-[#1a1a1a]">
+              Built for Shopify merchants
+            </span>
+          </div>
+
+          <p className="mt-3 text-xs sm:text-sm text-[#6b7280]">
+            Launching soon. Join the early access list.
           </p>
 
-          <div className="mt-7 sm:mt-8 max-w-[440px] mx-auto">
+          <div className="mt-6 sm:mt-7 max-w-[440px] mx-auto">
             <EmailCaptureForm />
           </div>
         </div>
